@@ -1,132 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CMJ Marine</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CMJ Marine | OEM Marine Upholstery Specialists</title>
 
 <style>
-body{
-    margin:0;
-    background:#08131f;
-    color:white;
-    font-family:Arial,Helvetica,sans-serif;
+:root{
+  --navy:#06111d;
+  --navy2:#0b1b2d;
+  --steel:#9fb3c8;
+  --blue:#2f8cff;
+  --white:#ffffff;
+  --soft:#d8e3ee;
 }
 
-header{
-    padding:90px 30px;
-    text-align:center;
-    background:linear-gradient(180deg,#10263d,#08131f);
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--navy);
+  color:var(--white);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  line-height:1.55;
+}
+
+a{color:inherit;text-decoration:none}
+
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:10;
+  padding:22px 6vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(6,17,29,.72);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.nav-links{
+  display:flex;
+  gap:26px;
+  color:var(--soft);
+  font-size:14px;
+}
+
+.hero{
+  min-height:100vh;
+  padding:170px 6vw 90px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(6,17,29,.92),rgba(6,17,29,.55),rgba(6,17,29,.2)),
+    linear-gradient(180deg,#10263d,#06111d);
+}
+
+.hero-content{
+  max-width:760px;
+}
+
+.eyebrow{
+  color:var(--steel);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:22px;
 }
 
 h1{
-    font-size:56px;
-    margin:0;
+  font-size:clamp(48px,8vw,96px);
+  line-height:.95;
+  margin:0 0 24px;
+  letter-spacing:-.06em;
 }
 
-h2{
-    font-weight:300;
-    color:#8cc9ff;
-    margin-top:15px;
+.hero h2{
+  font-size:clamp(24px,4vw,42px);
+  font-weight:400;
+  margin:0 0 28px;
+  color:var(--soft);
+}
+
+.hero p{
+  max-width:610px;
+  color:#b9c8d8;
+  font-size:19px;
 }
 
 .button{
-    display:inline-block;
-    margin-top:35px;
-    padding:16px 34px;
-    background:#1d8cff;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
+  display:inline-block;
+  margin-top:32px;
+  padding:15px 28px;
+  border-radius:999px;
+  background:var(--white);
+  color:var(--navy);
+  font-weight:800;
 }
 
-section{
-    max-width:1000px;
-    margin:auto;
-    padding:70px 30px;
+.section{
+  padding:110px 6vw;
 }
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.panel{
+  min-height:420px;
+  border-radius:28px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.03)),
+    #102033;
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;
+  align-items:end;
+  padding:28px;
+  color:#9fb3c8;
+}
+
+h2{
+  font-size:clamp(34px,5vw,62px);
+  line-height:1;
+  letter-spacing:-.045em;
+  margin:0 0 24px;
+}
+
+p{
+  color:#b9c8d8;
+  font-size:18px;
+  max-width:620px;
+}
+
+.light{
+  background:#f4f7fa;
+  color:#071321;
+}
+
+.light p{color:#405062}
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:46px;
 }
 
 .card{
-    background:#13283d;
-    padding:25px;
-    border-radius:12px;
+  background:#0d1c2e;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;
+  padding:34px;
+  min-height:260px;
+}
+
+.card h3{
+  font-size:26px;
+  margin:0 0 14px;
+}
+
+.card p{
+  font-size:16px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:44px;
+}
+
+.gallery div{
+  min-height:230px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#182b42,#08131f);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.cta{
+  text-align:center;
+  padding:130px 6vw;
+  background:linear-gradient(180deg,#071321,#02070c);
 }
 
 footer{
-    padding:50px;
-    text-align:center;
-    color:#9db0c2;
+  padding:38px 6vw;
+  color:#7f91a5;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:14px;
+}
+
+@media(max-width:800px){
+  .nav-links{display:none}
+  .grid,.cards,.gallery{grid-template-columns:1fr}
+  .section{padding:80px 6vw}
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
+<nav class="nav">
+  <div class="logo">CMJ MARINE</div>
+  <div class="nav-links">
+    <a href="#oem">OEM</a>
+    <a href="#retail">Retail</a>
+    <a href="#chairs">Captain Chairs</a>
+    <a href="#coolers">Cooler Cushions</a>
+    <a href="#quote">Quote</a>
+  </div>
+</nav>
 
-<h1>CMJ Marine</h1>
-
-<h2>Premium Marine Upholstery</h2>
-
-<p>
-OEM • Custom • Captain Chairs • Cooler Cushions
-</p>
-
-<a class="button" href="#">
-Request a Quote
-</a>
-
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Florida Marine Upholstery Manufacturing</div>
+    <h1>OEM Marine Upholstery Specialists</h1>
+    <h2>Serving Manufacturers and Boat Owners.</h2>
+    <p>
+      Premium marine upholstery, captain chairs, cooler cushions, and custom interiors built with OEM-level precision for manufacturers and discerning boat owners.
+    </p>
+    <a class="button" href="#quote">Request a Quote</a>
+  </div>
 </header>
 
-<section>
+<section id="oem" class="section light">
+  <div class="grid">
+    <div>
+      <div class="eyebrow">OEM Manufacturing</div>
+      <h2>Built for boat builders.</h2>
+      <p>
+        CMJ Marine partners with manufacturers to produce premium marine upholstery with consistent fit, clean execution, durable materials, and production-minded craftsmanship.
+      </p>
+    </div>
+    <div class="panel">Add strongest shop / production image here</div>
+  </div>
+</section>
 
-<h2>Built for Boat Builders & Boat Owners</h2>
+<section id="retail" class="section">
+  <div class="grid">
+    <div class="panel">Add finished cockpit upholstery image here</div>
+    <div>
+      <div class="eyebrow">Retail Marine Upholstery</div>
+      <h2>OEM quality for boat owners.</h2>
+      <p>
+        Complete interiors, replacement cushions, helm seating, bolsters, and custom upholstery projects receive the same attention to detail trusted by manufacturers.
+      </p>
+    </div>
+  </div>
+</section>
 
-<p>
-Welcome to the first version of the CMJ Marine website.
-We specialize in premium marine upholstery and innovative marine products proudly built in Florida.
-</p>
+<section class="section">
+  <div class="cards">
+    <div id="chairs" class="card">
+      <h3>Captain Chairs</h3>
+      <p>Premium helm seating designed for comfort, durability, and a refined marine finish.</p>
+    </div>
+    <div id="coolers" class="card">
+      <h3>Cooler Cushions</h3>
+      <p>Clean, functional cushion solutions built for life aboard modern center consoles.</p>
+    </div>
+    <div class="card">
+      <h3>Custom Upholstery</h3>
+      <p>Marine seating, cushions, bolsters, and interior upgrades built with precision.</p>
+    </div>
+  </div>
+</section>
 
-<div class="cards">
+<section class="section light">
+  <div class="eyebrow">Gallery Preview</div>
+  <h2>Craftsmanship in detail.</h2>
+  <p>
+    Selected upholstery work, stitching details, helm seating, cushions, and finished interiors.
+  </p>
+  <div class="gallery">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</section>
 
-<div class="card">
-<h3>OEM Manufacturing</h3>
-<p>Production upholstery for manufacturers.</p>
-</div>
+<section class="section">
+  <div class="grid">
+    <div>
+      <div class="eyebrow">About CMJ Marine</div>
+      <h2>Modern company. Deep experience.</h2>
+      <p>
+        CMJ Marine Inc. is a premium marine upholstery company serving manufacturers and boat owners throughout Florida. The company is backed by a founder with more than 30 years of marine upholstery experience.
+      </p>
+    </div>
+    <div class="panel">Add CMJ sign or founder/shop image here</div>
+  </div>
+</section>
 
-<div class="card">
-<h3>Custom Upholstery</h3>
-<p>High-quality custom marine interiors.</p>
-</div>
-
-<div class="card">
-<h3>Captain Chairs</h3>
-<p>Comfortable premium seating solutions.</p>
-</div>
-
-<div class="card">
-<h3>Cooler Cushions</h3>
-<p>Innovative marine accessories designed for life on the water.</p>
-</div>
-
-</div>
-
+<section id="quote" class="cta">
+  <div class="eyebrow">Start a Project</div>
+  <h2>Ready to build something better?</h2>
+  <p style="margin:auto;">
+    OEM production, custom upholstery, captain chairs, and cooler cushions.
+  </p>
+  <a class="button" href="mailto:info@cmjmarine.com">Request a Quote</a>
 </section>
 
 <footer>
-
-© CMJ Marine
-
+  © CMJ Marine Inc. · OEM Marine Upholstery Specialists
 </footer>
 
 </body>
-
 </html>
