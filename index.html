@@ -15,6 +15,10 @@
 
 *{box-sizing:border-box}
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:var(--navy);
@@ -32,16 +36,30 @@ body{
 }
 
 .header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:34px 6vw;
+  padding:26px 6vw;
+  background:rgba(5,11,18,.38);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-  font-weight:800;
-  letter-spacing:.38em;
-  font-size:18px;
+  display:block;
+  width:190px;
+  line-height:0;
+}
+
+.logo img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
 .nav{
@@ -68,7 +86,7 @@ body{
 
 .hero-content{
   max-width:640px;
-  padding:90px 6vw 70px;
+  padding:170px 6vw 70px;
   margin-top:auto;
   margin-bottom:auto;
 }
@@ -146,23 +164,74 @@ p{
   font-size:14px;
 }
 
+.next-section{
+  padding:90px 6vw;
+  background:#f4f7fa;
+  color:#071321;
+}
+
+.next-section h2{
+  font-size:clamp(34px,5vw,64px);
+  line-height:1;
+  letter-spacing:-.04em;
+  margin:0 0 20px;
+}
+
+.next-section p{
+  color:#405062;
+}
+
 @media(max-width:800px){
   .hero{
     background:
-      linear-gradient(180deg,rgba(5,11,18,.9) 0%,rgba(5,11,18,.55) 45%,rgba(5,11,18,.95) 100%),
+      linear-gradient(180deg,rgba(5,11,18,.88) 0%,rgba(5,11,18,.55) 45%,rgba(5,11,18,.96) 100%),
       url("hero-blue-leaning-post.PNG") center / cover no-repeat;
+  }
+
+  .header{
+    padding:22px 24px;
+  }
+
+  .logo{
+    width:165px;
   }
 
   .nav{
     display:none;
   }
 
-  .header{
-    padding:24px;
+  .quote{
+    padding:14px 18px;
+    font-size:15px;
+    max-width:145px;
+    text-align:center;
   }
 
   .hero-content{
-    padding:70px 24px;
+    padding:175px 24px 70px;
+  }
+
+  .kicker{
+    font-size:14px;
+  }
+
+  h1{
+    font-size:clamp(48px,14vw,70px);
+  }
+
+  p{
+    font-size:21px;
+  }
+
+  .buttons{
+    display:block;
+  }
+
+  .btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-bottom:14px;
   }
 
   .trust{
@@ -176,7 +245,9 @@ p{
 
 <section class="hero">
   <header class="header">
-    <div class="logo">CMJ MARINE</div>
+    <a class="logo" href="#">
+      <img src="CMJ-logo.PNG" alt="CMJ Marine">
+    </a>
 
     <nav class="nav">
       <a href="#">Products</a>
@@ -221,6 +292,13 @@ p{
       <span>Built for real marine conditions.</span>
     </div>
   </div>
+</section>
+
+<section class="next-section">
+  <h2>OEM quality, built for the water.</h2>
+  <p>
+    CMJ Marine serves manufacturers first, while also providing premium upholstery work for boat owners who expect the same level of fit, finish, and durability.
+  </p>
 </section>
 
 </body>
