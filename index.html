@@ -7,10 +7,8 @@
 
 <style>
 :root{
-  --navy:#06111d;
-  --navy2:#0b1b2d;
-  --steel:#9fb3c8;
-  --blue:#2f8cff;
+  --navy:#050b12;
+  --gold:#d6a84f;
   --white:#ffffff;
   --soft:#d8e3ee;
 }
@@ -22,300 +20,206 @@ body{
   background:var(--navy);
   color:var(--white);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  line-height:1.55;
-}
-
-a{color:inherit;text-decoration:none}
-
-.nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:10;
-  padding:22px 6vw;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(6,17,29,.72);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.logo{
-  font-weight:800;
-  letter-spacing:.08em;
-}
-
-.nav-links{
-  display:flex;
-  gap:26px;
-  color:var(--soft);
-  font-size:14px;
 }
 
 .hero{
   min-height:100vh;
-  padding:170px 6vw 90px;
+  background:
+    linear-gradient(90deg,rgba(5,11,18,.92) 0%,rgba(5,11,18,.72) 36%,rgba(5,11,18,.15) 70%),
+    url("hero-blue-leaning-post.png") center right / cover no-repeat;
+  display:flex;
+  flex-direction:column;
+}
+
+.header{
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(90deg,rgba(6,17,29,.92),rgba(6,17,29,.55),rgba(6,17,29,.2)),
-    linear-gradient(180deg,#10263d,#06111d);
+  justify-content:space-between;
+  padding:34px 6vw;
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:.38em;
+  font-size:18px;
+}
+
+.nav{
+  display:flex;
+  gap:34px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  opacity:.9;
+}
+
+.quote{
+  background:var(--gold);
+  color:#06111d;
+  padding:15px 22px;
+  font-weight:800;
+  text-decoration:none;
 }
 
 .hero-content{
-  max-width:760px;
+  max-width:640px;
+  padding:90px 6vw 70px;
+  margin-top:auto;
+  margin-bottom:auto;
 }
 
-.eyebrow{
-  color:var(--steel);
+.kicker{
+  color:var(--gold);
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.28em;
   text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:13px;
-  font-weight:700;
   margin-bottom:22px;
 }
 
 h1{
-  font-size:clamp(48px,8vw,96px);
+  font-size:clamp(48px,7vw,92px);
   line-height:.95;
-  margin:0 0 24px;
-  letter-spacing:-.06em;
-}
-
-.hero h2{
-  font-size:clamp(24px,4vw,42px);
-  font-weight:400;
   margin:0 0 28px;
-  color:var(--soft);
-}
-
-.hero p{
-  max-width:610px;
-  color:#b9c8d8;
-  font-size:19px;
-}
-
-.button{
-  display:inline-block;
-  margin-top:32px;
-  padding:15px 28px;
-  border-radius:999px;
-  background:var(--white);
-  color:var(--navy);
-  font-weight:800;
-}
-
-.section{
-  padding:110px 6vw;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-
-.panel{
-  min-height:420px;
-  border-radius:28px;
-  background:
-    linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.03)),
-    #102033;
-  border:1px solid rgba(255,255,255,.12);
-  display:flex;
-  align-items:end;
-  padding:28px;
-  color:#9fb3c8;
-}
-
-h2{
-  font-size:clamp(34px,5vw,62px);
-  line-height:1;
-  letter-spacing:-.045em;
-  margin:0 0 24px;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
 }
 
 p{
-  color:#b9c8d8;
-  font-size:18px;
-  max-width:620px;
+  color:var(--soft);
+  font-size:21px;
+  line-height:1.55;
+  max-width:520px;
+  margin:0 0 34px;
 }
 
-.light{
-  background:#f4f7fa;
-  color:#071321;
+.buttons{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
-.light p{color:#405062}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-  margin-top:46px;
+.btn{
+  padding:16px 24px;
+  border:1px solid rgba(255,255,255,.35);
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
-.card{
-  background:#0d1c2e;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:24px;
-  padding:34px;
-  min-height:260px;
+.btn.primary{
+  background:var(--gold);
+  color:#06111d;
+  border-color:var(--gold);
 }
 
-.card h3{
-  font-size:26px;
-  margin:0 0 14px;
-}
-
-.card p{
-  font-size:16px;
-}
-
-.gallery{
+.trust{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:44px;
+  background:rgba(0,0,0,.55);
+  border-top:1px solid rgba(255,255,255,.12);
 }
 
-.gallery div{
-  min-height:230px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#182b42,#08131f);
-  border:1px solid rgba(255,255,255,.1);
+.trust div{
+  padding:28px 34px;
+  border-right:1px solid rgba(255,255,255,.12);
 }
 
-.cta{
-  text-align:center;
-  padding:130px 6vw;
-  background:linear-gradient(180deg,#071321,#02070c);
+.trust strong{
+  display:block;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:6px;
 }
 
-footer{
-  padding:38px 6vw;
-  color:#7f91a5;
-  border-top:1px solid rgba(255,255,255,.08);
+.trust span{
+  color:var(--soft);
   font-size:14px;
 }
 
 @media(max-width:800px){
-  .nav-links{display:none}
-  .grid,.cards,.gallery{grid-template-columns:1fr}
-  .section{padding:80px 6vw}
+  .hero{
+    background:
+      linear-gradient(180deg,rgba(5,11,18,.9) 0%,rgba(5,11,18,.55) 45%,rgba(5,11,18,.95) 100%),
+      url("hero-blue-leaning-post.png") center / cover no-repeat;
+  }
+
+  .nav{display:none}
+
+  .header{
+    padding:24px;
+  }
+
+  .hero-content{
+    padding:70px 24px;
+  }
+
+  .trust{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<nav class="nav">
-  <div class="logo">CMJ MARINE</div>
-  <div class="nav-links">
-    <a href="#oem">OEM</a>
-    <a href="#retail">Retail</a>
-    <a href="#chairs">Captain Chairs</a>
-    <a href="#coolers">Cooler Cushions</a>
-    <a href="#quote">Quote</a>
-  </div>
-</nav>
+<section class="hero">
+  <header class="header">
+    <div class="logo">CMJ MARINE</div>
 
-<header class="hero">
+    <nav class="nav">
+      <a href="#">Products</a>
+      <a href="#">Gallery</a>
+      <a href="#">Capabilities</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <a class="quote" href="#">Request a Quote</a>
+  </header>
+
   <div class="hero-content">
-    <div class="eyebrow">Florida Marine Upholstery Manufacturing</div>
-    <h1>OEM Marine Upholstery Specialists</h1>
-    <h2>Serving Manufacturers and Boat Owners.</h2>
+    <div class="kicker">Built to the Highest Standard</div>
+
+    <h1>OEM Marine Upholstery</h1>
+
     <p>
-      Premium marine upholstery, captain chairs, cooler cushions, and custom interiors built with OEM-level precision for manufacturers and discerning boat owners.
+      Premium upholstery systems for manufacturers, boat builders, and discerning owners.
     </p>
-    <a class="button" href="#quote">Request a Quote</a>
-  </div>
-</header>
 
-<section id="oem" class="section light">
-  <div class="grid">
+    <div class="buttons">
+      <a class="btn primary" href="#">View Our Work</a>
+      <a class="btn" href="#">Our Capabilities</a>
+    </div>
+  </div>
+
+  <div class="trust">
     <div>
-      <div class="eyebrow">OEM Manufacturing</div>
-      <h2>Built for boat builders.</h2>
-      <p>
-        CMJ Marine partners with manufacturers to produce premium marine upholstery with consistent fit, clean execution, durable materials, and production-minded craftsmanship.
-      </p>
+      <strong>OEM Production</strong>
+      <span>Scalable. Reliable. Consistent.</span>
     </div>
-    <div class="panel">Add strongest shop / production image here</div>
-  </div>
-</section>
-
-<section id="retail" class="section">
-  <div class="grid">
-    <div class="panel">Add finished cockpit upholstery image here</div>
     <div>
-      <div class="eyebrow">Retail Marine Upholstery</div>
-      <h2>OEM quality for boat owners.</h2>
-      <p>
-        Complete interiors, replacement cushions, helm seating, bolsters, and custom upholstery projects receive the same attention to detail trusted by manufacturers.
-      </p>
+      <strong>Premium Materials</strong>
+      <span>Marine-grade. Built to last.</span>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="cards">
-    <div id="chairs" class="card">
-      <h3>Captain Chairs</h3>
-      <p>Premium helm seating designed for comfort, durability, and a refined marine finish.</p>
-    </div>
-    <div id="coolers" class="card">
-      <h3>Cooler Cushions</h3>
-      <p>Clean, functional cushion solutions built for life aboard modern center consoles.</p>
-    </div>
-    <div class="card">
-      <h3>Custom Upholstery</h3>
-      <p>Marine seating, cushions, bolsters, and interior upgrades built with precision.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section light">
-  <div class="eyebrow">Gallery Preview</div>
-  <h2>Craftsmanship in detail.</h2>
-  <p>
-    Selected upholstery work, stitching details, helm seating, cushions, and finished interiors.
-  </p>
-  <div class="gallery">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="grid">
     <div>
-      <div class="eyebrow">About CMJ Marine</div>
-      <h2>Modern company. Deep experience.</h2>
-      <p>
-        CMJ Marine Inc. is a premium marine upholstery company serving manufacturers and boat owners throughout Florida. The company is backed by a founder with more than 30 years of marine upholstery experience.
-      </p>
+      <strong>Expert Craftsmanship</strong>
+      <span>Backed by 30+ years of experience.</span>
     </div>
-    <div class="panel">Add CMJ sign or founder/shop image here</div>
+    <div>
+      <strong>Made in Florida</strong>
+      <span>Built for real marine conditions.</span>
+    </div>
   </div>
 </section>
-
-<section id="quote" class="cta">
-  <div class="eyebrow">Start a Project</div>
-  <h2>Ready to build something better?</h2>
-  <p style="margin:auto;">
-    OEM production, custom upholstery, captain chairs, and cooler cushions.
-  </p>
-  <a class="button" href="mailto:info@cmjmarine.com">Request a Quote</a>
-</section>
-
-<footer>
-  © CMJ Marine Inc. · OEM Marine Upholstery Specialists
-</footer>
 
 </body>
 </html>
