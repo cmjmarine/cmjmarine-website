@@ -28,7 +28,11 @@ body{
   display:flex;
   align-items:center;
   background:
-    linear-gradient(180deg,rgba(5,10,18,.80),rgba(5,10,18,.38),rgba(5,10,18,.92)),
+    linear-gradient(180deg,
+      rgba(5,10,18,.82) 0%,
+      rgba(5,10,18,.42) 46%,
+      rgba(5,10,18,.96) 100%
+    ),
     url("hero-blue-leaning-post.PNG") 76% center / cover no-repeat;
 }
 
@@ -40,25 +44,30 @@ body{
   z-index:10;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:28px 6vw;
+  align-items:flex-start;
+  padding:30px 6vw;
 }
 
-.wordmark{
-  color:white;
+.brand{
   text-decoration:none;
-  font-weight:900;
-  font-size:22px;
-  letter-spacing:.34em;
-  line-height:1;
+  color:white;
+  display:inline-flex;
+  flex-direction:column;
+  align-items:flex-start;
 }
 
-.wordmark span{
+.brand img{
+  width:165px;
   display:block;
-  font-size:10px;
-  letter-spacing:.62em;
-  margin-top:8px;
-  opacity:.75;
+  filter:brightness(2.8) contrast(1.1);
+}
+
+.brand span{
+  margin-top:12px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.42em;
+  text-transform:uppercase;
 }
 
 .nav{
@@ -77,38 +86,38 @@ body{
 }
 
 .quote{
-  border:1px solid rgba(255,255,255,.48);
-  padding:17px 26px;
+  border:1px solid rgba(255,255,255,.56);
+  padding:18px 28px;
 }
 
 .content{
-  max-width:720px;
-  padding:150px 6vw 90px;
+  max-width:760px;
+  padding:190px 6vw 90px;
 }
 
 .kicker{
   color:var(--gold);
   font-size:14px;
   font-weight:900;
-  letter-spacing:.32em;
+  letter-spacing:.34em;
   text-transform:uppercase;
-  margin-bottom:24px;
+  margin-bottom:28px;
 }
 
 h1{
-  margin:0 0 30px;
-  font-size:clamp(58px,8vw,112px);
+  margin:0 0 32px;
+  font-size:clamp(60px,8vw,116px);
   line-height:.88;
   letter-spacing:-.06em;
   text-transform:uppercase;
 }
 
 p{
-  max-width:560px;
+  max-width:590px;
   color:var(--soft);
-  font-size:clamp(20px,2vw,24px);
+  font-size:clamp(20px,2vw,25px);
   line-height:1.5;
-  margin:0 0 40px;
+  margin:0 0 42px;
 }
 
 .buttons{
@@ -119,14 +128,14 @@ p{
 
 .btn{
   display:inline-block;
-  padding:23px 36px;
+  padding:23px 38px;
   color:white;
   text-decoration:none;
-  border:1px solid rgba(255,255,255,.42);
+  border:1px solid rgba(255,255,255,.48);
   font-size:12px;
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
 }
 
 .btn.primary{
@@ -191,25 +200,24 @@ p{
     align-items:flex-start;
     background:
       linear-gradient(180deg,
-        rgba(5,10,18,.82) 0%,
+        rgba(5,10,18,.84) 0%,
         rgba(5,10,18,.46) 45%,
-        rgba(5,10,18,.94) 100%
+        rgba(5,10,18,.96) 100%
       ),
       url("hero-blue-leaning-post.PNG") 76% center / cover no-repeat;
   }
 
   .header{
-    padding:24px;
+    padding:30px 24px;
   }
 
-  .wordmark{
-    font-size:18px;
-    letter-spacing:.25em;
+  .brand img{
+    width:150px;
   }
 
-  .wordmark span{
-    font-size:9px;
-    letter-spacing:.42em;
+  .brand span{
+    font-size:12px;
+    letter-spacing:.38em;
   }
 
   .nav a:not(.quote){
@@ -217,16 +225,21 @@ p{
   }
 
   .quote{
-    padding:15px 20px;
+    padding:17px 22px;
     font-size:11px;
   }
 
   .content{
-    padding:165px 24px 80px;
+    padding:210px 24px 80px;
+  }
+
+  .kicker{
+    font-size:13px;
+    letter-spacing:.28em;
   }
 
   h1{
-    font-size:clamp(56px,15vw,86px);
+    font-size:clamp(58px,15vw,88px);
   }
 
   .btn{
@@ -248,9 +261,9 @@ p{
 <body>
 
 <header class="header">
-  <a class="wordmark" href="/">
-    CMJ
-    <span>MARINE</span>
+  <a class="brand" href="/">
+    <img src="CMJ-logo.PNG" alt="CMJ Marine">
+    <span>CMJ Marine</span>
   </a>
 
   <nav class="nav">
