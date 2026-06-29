@@ -8,13 +8,16 @@
 <style>
 :root{
   --navy:#06111d;
-  --steel:#9fb3c8;
+  --deep:#02070c;
   --gold:#d6a84f;
   --white:#ffffff;
   --soft:#d8e3ee;
+  --steel:#9fb3c8;
 }
 
 *{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -24,35 +27,51 @@ body{
   line-height:1.55;
 }
 
-a{color:inherit;text-decoration:none}
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
 .nav{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
-  z-index:20;
-  padding:20px 28px;
+  z-index:50;
+  padding:20px 6vw;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(6,17,29,.28);
-  backdrop-filter:blur(10px);
+  background:rgba(2,7,12,.38);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  display:block;
+  width:170px;
 }
 
 .logo img{
-  height:48px;
-  width:auto;
+  width:100%;
+  height:auto;
   display:block;
 }
 
 .nav-links{
   display:flex;
   gap:26px;
+  align-items:center;
   color:var(--soft);
-  font-size:13px;
+  font-size:12px;
   text-transform:uppercase;
-  letter-spacing:.08em;
-  font-weight:700;
+  letter-spacing:.12em;
+  font-weight:800;
+}
+
+.nav-links a:last-child{
+  border:1px solid rgba(255,255,255,.55);
+  padding:12px 18px;
 }
 
 .hero{
@@ -61,8 +80,13 @@ a{color:inherit;text-decoration:none}
   display:flex;
   align-items:center;
   background:
-    linear-gradient(90deg,rgba(6,17,29,.94),rgba(6,17,29,.65),rgba(6,17,29,.24)),
-    linear-gradient(180deg,#10263d,#06111d);
+    linear-gradient(
+      90deg,
+      rgba(2,7,12,.94) 0%,
+      rgba(6,17,29,.76) 42%,
+      rgba(6,17,29,.25) 78%
+    ),
+    url("hero-blue-leaning-post.PNG") center center / cover no-repeat;
 }
 
 .hero-content{
@@ -74,48 +98,54 @@ a{color:inherit;text-decoration:none}
   text-transform:uppercase;
   letter-spacing:.22em;
   font-size:13px;
-  font-weight:800;
+  font-weight:900;
   margin-bottom:22px;
 }
 
 h1{
-  font-size:clamp(48px,8vw,96px);
-  line-height:.95;
+  font-size:clamp(52px,8vw,96px);
+  line-height:.94;
   margin:0 0 24px;
-  letter-spacing:-.06em;
+  letter-spacing:-.065em;
 }
 
 .hero h2{
-  font-size:clamp(24px,4vw,42px);
+  font-size:clamp(25px,4vw,42px);
   font-weight:400;
+  line-height:1.12;
   margin:0 0 28px;
   color:var(--soft);
 }
 
 .hero p{
-  max-width:610px;
+  max-width:600px;
   color:#d8e3ee;
-  font-size:19px;
+  font-size:20px;
+}
+
+.button-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:34px;
 }
 
 .button{
   display:inline-block;
-  margin-top:32px;
-  padding:15px 28px;
-  border-radius:0;
+  padding:16px 30px;
   background:var(--gold);
   color:#071321;
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   font-size:13px;
+  text-align:center;
 }
 
 .button.secondary{
   background:transparent;
   color:white;
   border:1px solid rgba(255,255,255,.55);
-  margin-left:12px;
 }
 
 .section{
@@ -127,19 +157,6 @@ h1{
   grid-template-columns:1fr 1fr;
   gap:70px;
   align-items:center;
-}
-
-.panel{
-  min-height:420px;
-  border-radius:28px;
-  background:
-    linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.03)),
-    #102033;
-  border:1px solid rgba(255,255,255,.12);
-  display:flex;
-  align-items:end;
-  padding:28px;
-  color:#9fb3c8;
 }
 
 h2{
@@ -160,13 +177,28 @@ p{
   color:#071321;
 }
 
-.light p{color:#405062}
+.light p{
+  color:#405062;
+}
+
+.panel{
+  min-height:420px;
+  border-radius:28px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.03)),
+    #102033;
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;
+  align-items:flex-end;
+  padding:28px;
+  color:#9fb3c8;
+  overflow:hidden;
+}
 
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:22px;
-  margin-top:46px;
 }
 
 .card{
@@ -196,14 +228,23 @@ p{
 .gallery div{
   min-height:230px;
   border-radius:22px;
-  background:linear-gradient(135deg,#182b42,#08131f);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+    #102033;
   border:1px solid rgba(255,255,255,.1);
 }
 
 .cta{
   text-align:center;
   padding:130px 6vw;
-  background:linear-gradient(180deg,#071321,#02070c);
+  background:
+    linear-gradient(180deg,rgba(6,17,29,.96),rgba(2,7,12,1)),
+    url("hero-blue-leaning-post.PNG") center center / cover no-repeat;
+}
+
+.cta p{
+  margin-left:auto;
+  margin-right:auto;
 }
 
 footer{
@@ -213,13 +254,13 @@ footer{
   font-size:14px;
 }
 
-@media(max-width:800px){
+@media(max-width:900px){
   .nav{
-    padding:18px 20px;
+    padding:18px 24px;
   }
 
-  .logo img{
-    height:42px;
+  .logo{
+    width:145px;
   }
 
   .nav-links{
@@ -227,38 +268,52 @@ footer{
   }
 
   .hero{
+    min-height:100svh;
     padding:150px 28px 70px;
     align-items:flex-end;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2,7,12,.50) 0%,
+        rgba(2,7,12,.72) 38%,
+        rgba(2,7,12,.94) 100%
+      ),
+      url("hero-blue-leaning-post.PNG") center center / cover no-repeat;
   }
 
   h1{
-    font-size:58px;
+    font-size:clamp(50px,15vw,72px);
   }
 
   .hero h2{
-    font-size:25px;
+    font-size:28px;
   }
 
   .hero p{
-    font-size:18px;
+    font-size:19px;
+  }
+
+  .button-row{
+    display:block;
   }
 
   .button{
     width:100%;
-    text-align:center;
-  }
-
-  .button.secondary{
-    margin-left:0;
     margin-top:14px;
   }
 
-  .grid,.cards,.gallery{
+  .grid,
+  .cards,
+  .gallery{
     grid-template-columns:1fr;
   }
 
   .section{
-    padding:80px 28px;
+    padding:82px 28px;
+  }
+
+  .panel{
+    min-height:320px;
   }
 }
 </style>
@@ -288,8 +343,11 @@ footer{
     <p>
       Premium OEM upholstery systems engineered for manufacturers and discerning boat owners.
     </p>
-    <a class="button" href="#quote">Request a Quote</a>
-    <a class="button secondary" href="#retail">View Our Work</a>
+
+    <div class="button-row">
+      <a class="button" href="#quote">Request a Quote</a>
+      <a class="button secondary" href="#retail">View Our Work</a>
+    </div>
   </div>
 </header>
 
@@ -302,13 +360,13 @@ footer{
         CMJ Marine partners with manufacturers to produce premium marine upholstery with consistent fit, clean execution, durable materials, and production-minded craftsmanship.
       </p>
     </div>
-    <div class="panel">Add strongest shop / production image here</div>
+    <div class="panel">Production image coming next</div>
   </div>
 </section>
 
 <section id="retail" class="section">
   <div class="grid">
-    <div class="panel">Add finished Costa upholstery image here</div>
+    <div class="panel">Costa upholstery image coming next</div>
     <div>
       <div class="eyebrow">Retail Marine Upholstery</div>
       <h2>OEM quality for boat owners.</h2>
@@ -362,14 +420,14 @@ footer{
         CMJ Marine Inc. is a premium marine upholstery company serving manufacturers and boat owners throughout Florida. The company is backed by a founder with more than 30 years of marine upholstery experience.
       </p>
     </div>
-    <div class="panel">Add CMJ sign or founder/shop image here</div>
+    <div class="panel">CMJ shop / sign image coming next</div>
   </div>
 </section>
 
 <section id="quote" class="cta">
   <div class="eyebrow">Start a Project</div>
   <h2>Ready to build something better?</h2>
-  <p style="margin:auto;">
+  <p>
     OEM production, custom upholstery, captain chairs, and cooler cushions.
   </p>
   <a class="button" href="mailto:info@cmjmarine.com">Request a Quote</a>
