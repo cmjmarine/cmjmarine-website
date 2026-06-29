@@ -15,6 +15,8 @@
 
 *{box-sizing:border-box}
 
+html{scroll-behavior:smooth}
+
 body{
   margin:0;
   background:var(--dark);
@@ -28,12 +30,12 @@ body{
   align-items:center;
   background:
     linear-gradient(90deg,
-      rgba(5,10,18,.94) 0%,
-      rgba(5,10,18,.82) 34%,
-      rgba(5,10,18,.42) 58%,
-      rgba(5,10,18,.12) 100%
+      rgba(5,10,18,.92) 0%,
+      rgba(5,10,18,.78) 34%,
+      rgba(5,10,18,.34) 58%,
+      rgba(5,10,18,.08) 100%
     ),
-    url("hero-blue-leaning-post.PNG") 78% center / cover no-repeat;
+    url("hero-blue-leaning-post.PNG") 80% center / cover no-repeat;
 }
 
 .header{
@@ -49,8 +51,10 @@ body{
 }
 
 .logo img{
-  width:170px;
+  width:190px;
   display:block;
+  opacity:1;
+  filter:brightness(2.2) contrast(1.08);
 }
 
 .nav{
@@ -69,8 +73,8 @@ body{
 }
 
 .quote{
-  border:1px solid rgba(255,255,255,.45);
-  padding:16px 24px;
+  border:1px solid rgba(255,255,255,.48);
+  padding:17px 26px;
 }
 
 .content{
@@ -111,7 +115,7 @@ p{
 
 .btn{
   display:inline-block;
-  padding:22px 34px;
+  padding:23px 36px;
   color:white;
   text-decoration:none;
   border:1px solid rgba(255,255,255,.42);
@@ -127,14 +131,65 @@ p{
   border-color:var(--gold);
 }
 
+.section{
+  padding:100px 6vw;
+  background:#07111d;
+}
+
+.section h2{
+  max-width:900px;
+  margin:0 0 24px;
+  font-size:clamp(36px,5vw,72px);
+  line-height:.95;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+}
+
+.section p{
+  max-width:640px;
+  font-size:20px;
+  color:var(--soft);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:54px;
+}
+
+.card{
+  min-height:260px;
+  padding:28px;
+  background:#0d1a29;
+  border:1px solid rgba(255,255,255,.10);
+  display:flex;
+  align-items:flex-end;
+}
+
+.card h3{
+  margin:0;
+  font-size:22px;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+}
+
+.footer{
+  padding:46px 6vw;
+  color:rgba(255,255,255,.55);
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:14px;
+}
+
 @media(max-width:900px){
   .hero{
     align-items:flex-start;
     background:
       linear-gradient(180deg,
-        rgba(5,10,18,.96) 0%,
-        rgba(5,10,18,.72) 42%,
-        rgba(5,10,18,.96) 100%
+        rgba(5,10,18,.90) 0%,
+        rgba(5,10,18,.62) 42%,
+        rgba(5,10,18,.94) 100%
       ),
       url("hero-blue-leaning-post.PNG") 76% center / cover no-repeat;
   }
@@ -144,7 +199,7 @@ p{
   }
 
   .logo img{
-    width:140px;
+    width:155px;
   }
 
   .nav a:not(.quote){
@@ -152,7 +207,7 @@ p{
   }
 
   .quote{
-    padding:14px 18px;
+    padding:15px 20px;
     font-size:11px;
   }
 
@@ -167,6 +222,14 @@ p{
   .btn{
     width:100%;
     text-align:center;
+  }
+
+  .section{
+    padding:80px 24px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -204,6 +267,36 @@ p{
     </div>
   </div>
 </section>
+
+<section class="section" id="oem">
+  <h2>Built for manufacturers. Refined for owners.</h2>
+
+  <p>
+    CMJ Marine builds premium marine upholstery systems with the consistency, fit, and finish expected from an OEM manufacturing partner.
+  </p>
+
+  <div class="grid" id="products">
+    <div class="card">
+      <h3>OEM<br>Production</h3>
+    </div>
+
+    <div class="card">
+      <h3>Captain<br>Chairs</h3>
+    </div>
+
+    <div class="card">
+      <h3>Marine<br>Upholstery</h3>
+    </div>
+
+    <div class="card">
+      <h3>Custom<br>Projects</h3>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  CMJ Marine · OEM Marine Upholstery Specialists · Florida
+</footer>
 
 </body>
 </html>
