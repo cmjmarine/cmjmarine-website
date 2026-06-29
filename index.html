@@ -15,10 +15,6 @@
 
 *{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   margin:0;
   background:var(--navy);
@@ -44,8 +40,8 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:26px 6vw;
-  background:rgba(5,11,18,.38);
+  padding:22px 6vw;
+  background:rgba(5,11,18,.55);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
@@ -79,14 +75,14 @@ body{
 .quote{
   background:var(--gold);
   color:#06111d;
-  padding:15px 22px;
+  padding:14px 22px;
   font-weight:800;
   text-decoration:none;
 }
 
 .hero-content{
   max-width:640px;
-  padding:170px 6vw 70px;
+  padding:180px 6vw 70px;
   margin-top:auto;
   margin-bottom:auto;
 }
@@ -164,23 +160,6 @@ p{
   font-size:14px;
 }
 
-.next-section{
-  padding:90px 6vw;
-  background:#f4f7fa;
-  color:#071321;
-}
-
-.next-section h2{
-  font-size:clamp(34px,5vw,64px);
-  line-height:1;
-  letter-spacing:-.04em;
-  margin:0 0 20px;
-}
-
-.next-section p{
-  color:#405062;
-}
-
 @media(max-width:800px){
   .hero{
     background:
@@ -189,7 +168,7 @@ p{
   }
 
   .header{
-    padding:22px 24px;
+    padding:18px 24px;
   }
 
   .logo{
@@ -201,26 +180,13 @@ p{
   }
 
   .quote{
-    padding:14px 18px;
-    font-size:15px;
-    max-width:145px;
+    padding:12px 16px;
+    font-size:14px;
     text-align:center;
   }
 
   .hero-content{
-    padding:175px 24px 70px;
-  }
-
-  .kicker{
-    font-size:14px;
-  }
-
-  h1{
-    font-size:clamp(48px,14vw,70px);
-  }
-
-  p{
-    font-size:21px;
+    padding:165px 24px 70px;
   }
 
   .buttons{
@@ -246,7 +212,7 @@ p{
 <section class="hero">
   <header class="header">
     <a class="logo" href="#">
-      <img src="CMJ-logo.PNG" alt="CMJ Marine">
+      <img src="CMJ-logo-v2.PNG?v=999" alt="CMJ Marine">
     </a>
 
     <nav class="nav">
@@ -292,13 +258,6 @@ p{
       <span>Built for real marine conditions.</span>
     </div>
   </div>
-</section>
-
-<section class="next-section">
-  <h2>OEM quality, built for the water.</h2>
-  <p>
-    CMJ Marine serves manufacturers first, while also providing premium upholstery work for boat owners who expect the same level of fit, finish, and durability.
-  </p>
 </section>
 
 </body>
