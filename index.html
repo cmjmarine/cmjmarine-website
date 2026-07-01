@@ -204,44 +204,51 @@ p{
 }
 
 .card{
-  min-height:300px;
+  min-height:260px;
   padding:28px;
   background:#0d1a29;
   border:1px solid rgba(255,255,255,.10);
   display:flex;
   align-items:flex-end;
-  position:relative;
   overflow:hidden;
-  background-size:cover;
-  background-position:center;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,rgba(5,11,18,.02) 0%,rgba(5,11,18,.12) 44%,rgba(5,11,18,.84) 100%);
-  z-index:1;
+  position:relative;
 }
 
 .card h3{
-  position:relative;
-  z-index:2;
   margin:0;
   font-size:22px;
   line-height:1.05;
   letter-spacing:-.02em;
   text-transform:uppercase;
+  position:relative;
+  z-index:2;
 }
 
-.card-oem{
+.image-card{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.image-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(5,11,18,.04) 0%,rgba(5,11,18,.18) 45%,rgba(5,11,18,.72) 100%);
+  z-index:1;
+}
+
+.oem-card{
   background-image:url("oem-production-tile.PNG");
 }
 
-.card-chair{
+.captain-card{
   background-image:url("captile.PNG");
   background-position:center;
+}
+
+.captain-card h3{
+  display:none;
 }
 
 .footer{
@@ -318,7 +325,13 @@ p{
   }
 
   .card{
-    min-height:360px;
+    min-height:auto;
+    aspect-ratio:16/9;
+  }
+
+  .captain-card{
+    background-size:cover;
+    background-position:center;
   }
 }
 </style>
@@ -383,8 +396,14 @@ p{
   </p>
 
   <div class="grid">
-    <div class="card card-oem"><h3>OEM<br>Production</h3></div>
-    <div class="card card-chair"><h3>Captain<br>Chairs</h3></div>
+    <a class="card image-card oem-card" href="quote.html" aria-label="OEM Production">
+      <h3>OEM<br>Production</h3>
+    </a>
+
+    <a class="card image-card captain-card" href="#products" aria-label="Captain Chairs">
+      <h3>Captain<br>Chairs</h3>
+    </a>
+
     <div class="card"><h3>Marine<br>Upholstery</h3></div>
     <div class="card"><h3>Custom<br>Projects</h3></div>
   </div>
