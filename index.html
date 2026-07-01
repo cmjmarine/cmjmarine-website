@@ -25,6 +25,11 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 }
 
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
 .hero{
   min-height:100vh;
   display:flex;
@@ -204,6 +209,7 @@ p{
 }
 
 .card{
+  position:relative;
   min-height:260px;
   padding:28px;
   background:#0d1a29;
@@ -211,44 +217,62 @@ p{
   display:flex;
   align-items:flex-end;
   overflow:hidden;
-  position:relative;
+  color:#fff;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.01);
+  transition:transform .45s ease;
+  opacity:.92;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,
+      rgba(5,11,18,.08) 0%,
+      rgba(5,11,18,.30) 48%,
+      rgba(5,11,18,.82) 100%
+    );
+}
+
+.card:hover::before{
+  transform:scale(1.04);
 }
 
 .card h3{
+  position:relative;
+  z-index:2;
   margin:0;
+  color:#fff;
   font-size:22px;
   line-height:1.05;
   letter-spacing:-.02em;
   text-transform:uppercase;
-  position:relative;
-  z-index:2;
 }
 
-.image-card{
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-
-.image-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(5,11,18,.04) 0%,rgba(5,11,18,.18) 45%,rgba(5,11,18,.72) 100%);
-  z-index:1;
-}
-
-.oem-card{
+.oem-card::before{
   background-image:url("oem-production-tile.PNG");
+  background-position:center;
 }
 
-.captain-card{
+.captain-card::before{
   background-image:url("captile.PNG");
   background-position:center;
 }
 
-.captain-card h3{
-  display:none;
+.upholstery-card::before,
+.custom-card::before{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+    #0d1a29;
 }
 
 .footer{
@@ -325,13 +349,11 @@ p{
   }
 
   .card{
-    min-height:auto;
-    aspect-ratio:16/9;
+    min-height:220px;
   }
 
   .captain-card{
-    background-size:cover;
-    background-position:center;
+    min-height:250px;
   }
 }
 </style>
@@ -396,16 +418,10 @@ p{
   </p>
 
   <div class="grid">
-    <a class="card image-card oem-card" href="quote.html" aria-label="OEM Production">
-      <h3>OEM<br>Production</h3>
-    </a>
-
-    <a class="card image-card captain-card" href="#products" aria-label="Captain Chairs">
-      <h3>Captain<br>Chairs</h3>
-    </a>
-
-    <div class="card"><h3>Marine<br>Upholstery</h3></div>
-    <div class="card"><h3>Custom<br>Projects</h3></div>
+    <a class="card oem-card" href="quote.html"><h3>OEM<br>Production</h3></a>
+    <a class="card captain-card" href="quote.html"><h3>Captain<br>Chairs</h3></a>
+    <a class="card upholstery-card" href="#gallery"><h3>Marine<br>Upholstery</h3></a>
+    <a class="card custom-card" href="quote.html"><h3>Custom<br>Projects</h3></a>
   </div>
 </section>
 
