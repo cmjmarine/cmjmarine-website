@@ -210,14 +210,36 @@ p{
   border:1px solid rgba(255,255,255,.10);
   display:flex;
   align-items:flex-end;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(5,11,18,.05) 0%,rgba(5,11,18,.72) 100%);
+  z-index:1;
 }
 
 .card h3{
+  position:relative;
+  z-index:2;
   margin:0;
   font-size:22px;
   line-height:1.05;
   letter-spacing:-.02em;
   text-transform:uppercase;
+}
+
+.card.image-card{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.oem-production-card{
+  background-image:url("OEM–production–tile.PNG");
 }
 
 .footer{
@@ -292,6 +314,10 @@ p{
   .grid{
     grid-template-columns:1fr;
   }
+
+  .card{
+    min-height:300px;
+  }
 }
 </style>
 </head>
@@ -355,7 +381,7 @@ p{
   </p>
 
   <div class="grid">
-    <div class="card"><h3>OEM<br>Production</h3></div>
+    <div class="card image-card oem-production-card"><h3>OEM<br>Production</h3></div>
     <div class="card"><h3>Captain<br>Chairs</h3></div>
     <div class="card"><h3>Marine<br>Upholstery</h3></div>
     <div class="card"><h3>Custom<br>Projects</h3></div>
