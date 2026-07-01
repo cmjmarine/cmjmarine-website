@@ -204,22 +204,14 @@ p{
 }
 
 .card{
+  position:relative;
   min-height:260px;
   padding:28px;
   background:#0d1a29;
   border:1px solid rgba(255,255,255,.10);
   display:flex;
   align-items:flex-end;
-  position:relative;
   overflow:hidden;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(5,11,18,.05) 0%,rgba(5,11,18,.72) 100%);
-  z-index:1;
 }
 
 .card h3{
@@ -233,13 +225,31 @@ p{
 }
 
 .card.image-card{
+  background-image:
+    linear-gradient(180deg,rgba(5,11,18,.10) 0%,rgba(5,11,18,.18) 45%,rgba(5,11,18,.86) 100%),
+    url("oem-production-tile.PNG");
   background-size:cover;
   background-position:center;
-  background-repeat:no-repeat;
 }
 
-.oem-production-card{
-  background-image:url("OEM–production–tile.PNG");
+.card.image-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(5,11,18,.08);
+  z-index:1;
+  transition:transform .5s ease, opacity .5s ease;
+}
+
+@media(hover:hover){
+  .card.image-card{
+    transition:transform .5s ease, border-color .5s ease;
+  }
+
+  .card.image-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(214,168,79,.45);
+  }
 }
 
 .footer{
@@ -316,7 +326,7 @@ p{
   }
 
   .card{
-    min-height:300px;
+    min-height:340px;
   }
 }
 </style>
@@ -381,7 +391,7 @@ p{
   </p>
 
   <div class="grid">
-    <div class="card image-card oem-production-card"><h3>OEM<br>Production</h3></div>
+    <div class="card image-card"><h3>OEM<br>Production</h3></div>
     <div class="card"><h3>Captain<br>Chairs</h3></div>
     <div class="card"><h3>Marine<br>Upholstery</h3></div>
     <div class="card"><h3>Custom<br>Projects</h3></div>
