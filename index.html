@@ -6,40 +6,18 @@
 <title>CMJ Marine | OEM Marine Upholstery Specialists</title>
 
 <style>
-:root{
-  --dark:#050b12;
-  --dark2:#07111d;
-  --gold:#d6a84f;
-  --white:#ffffff;
-  --soft:#d8e3ee;
-  --muted:#8fa3b8;
-}
-
+:root{--dark:#050b12;--dark2:#07111d;--gold:#d6a84f;--white:#ffffff;--soft:#d8e3ee;--muted:#8fa3b8;}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:var(--dark);
-  color:var(--white);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
+body{margin:0;background:var(--dark);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;}
+a{color:inherit;text-decoration:none;}
 
 .hero{
   min-height:100vh;
   display:flex;
   align-items:center;
   background:
-    linear-gradient(180deg,
-      rgba(5,10,18,.70) 0%,
-      rgba(5,10,18,.32) 46%,
-      rgba(5,10,18,.90) 100%
-    ),
+    linear-gradient(180deg,rgba(5,10,18,.70) 0%,rgba(5,10,18,.32) 46%,rgba(5,10,18,.90) 100%),
     url("hero-blue-leaning-post.PNG") 76% center / cover no-repeat;
 }
 
@@ -57,319 +35,64 @@ a{
   backdrop-filter:blur(8px);
 }
 
-.brand img{
-  width:190px;
-  display:block;
-  filter:brightness(1.2) contrast(1.05);
-}
+.brand img{width:190px;display:block;filter:brightness(1.2) contrast(1.05);}
+.nav{display:flex;gap:28px;align-items:center;}
+.nav a{color:white;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+.quote{border:1px solid rgba(255,255,255,.48);padding:18px 28px;}
 
-.nav{
-  display:flex;
-  gap:28px;
-  align-items:center;
-}
+.content{max-width:760px;padding:190px 6vw 90px;}
+.kicker,.eyebrow{color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.34em;text-transform:uppercase;margin-bottom:28px;}
+h1{margin:0 0 30px;font-size:clamp(60px,8vw,116px);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;}
+p{max-width:590px;color:var(--soft);font-size:clamp(20px,2vw,25px);line-height:1.5;margin:0 0 42px;}
 
-.nav a{
-  color:white;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
+.buttons{display:flex;gap:16px;flex-wrap:wrap;}
+.btn{display:inline-block;padding:23px 38px;color:white;text-decoration:none;border:1px solid rgba(255,255,255,.48);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.14em;}
+.btn.primary{background:var(--gold);color:#06111d;border-color:var(--gold);}
 
-.quote{
-  border:1px solid rgba(255,255,255,.48);
-  padding:18px 28px;
-}
+.featured-product{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center;padding:120px 6vw;background:radial-gradient(circle at 20% 30%,rgba(214,168,79,.10),transparent 30%),#f6f7f8;color:#07111d;}
+.product-image img{width:100%;max-width:620px;display:block;margin:auto;}
+.product-copy h2{margin:0 0 26px;font-size:clamp(42px,6vw,86px);line-height:.92;letter-spacing:-.06em;text-transform:uppercase;}
+.product-copy p{color:#314153;font-size:21px;line-height:1.55;margin-bottom:36px;}
+.product-copy .eyebrow{color:var(--gold);}
+.dark-btn{color:#07111d;border-color:rgba(7,17,29,.35);}
 
-.content{
-  max-width:760px;
-  padding:190px 6vw 90px;
-}
+.section{padding:100px 6vw;background:var(--dark2);}
+.section h2{max-width:900px;margin:0 0 24px;font-size:clamp(36px,5vw,72px);line-height:.95;letter-spacing:-.05em;text-transform:uppercase;}
+.section p{max-width:720px;font-size:20px;color:var(--soft);}
 
-.kicker,
-.eyebrow{
-  color:var(--gold);
-  font-size:14px;
-  font-weight:900;
-  letter-spacing:.34em;
-  text-transform:uppercase;
-  margin-bottom:28px;
-}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:54px;}
+.card{position:relative;min-height:260px;padding:28px;background:#0d1a29;border:1px solid rgba(255,255,255,.10);display:flex;align-items:flex-end;overflow:hidden;color:#fff;}
+.card::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.01);transition:transform .45s ease;opacity:.92;}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,11,18,.08) 0%,rgba(5,11,18,.30) 48%,rgba(5,11,18,.82) 100%);}
+.card:hover::before{transform:scale(1.04);}
+.card h3{position:relative;z-index:2;margin:0;color:#fff;font-size:22px;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase;}
 
-h1{
-  margin:0 0 30px;
-  font-size:clamp(60px,8vw,116px);
-  line-height:.88;
-  letter-spacing:-.06em;
-  text-transform:uppercase;
-}
+.oem-card::before{background-image:url("oemtilev2.PNG");background-position:center;}
+.captain-card::before{background-image:url("2capblueback.PNG");background-position:center;}
+.quilting-card::before{background-image:url("qtile.PNG");background-position:center;}
+.upholstery-card::before{background-image:url("uphtile2.PNG");background-position:55% center;}
+.custom-card::before{background-image:url("cptile.PNG");background-position:center;}
 
-p{
-  max-width:590px;
-  color:var(--soft);
-  font-size:clamp(20px,2vw,25px);
-  line-height:1.5;
-  margin:0 0 42px;
-}
+.footer{padding:46px 6vw;color:rgba(255,255,255,.55);border-top:1px solid rgba(255,255,255,.1);font-size:14px;}
 
-.buttons{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-block;
-  padding:23px 38px;
-  color:white;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.48);
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-}
-
-.btn.primary{
-  background:var(--gold);
-  color:#06111d;
-  border-color:var(--gold);
-}
-
-.featured-product{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:80px;
-  align-items:center;
-  padding:120px 6vw;
-  background:
-    radial-gradient(circle at 20% 30%,rgba(214,168,79,.10),transparent 30%),
-    #f6f7f8;
-  color:#07111d;
-}
-
-.product-image img{
-  width:100%;
-  max-width:620px;
-  display:block;
-  margin:auto;
-}
-
-.product-copy h2{
-  margin:0 0 26px;
-  font-size:clamp(42px,6vw,86px);
-  line-height:.92;
-  letter-spacing:-.06em;
-  text-transform:uppercase;
-}
-
-.product-copy p{
-  color:#314153;
-  font-size:21px;
-  line-height:1.55;
-  margin-bottom:36px;
-}
-
-.product-copy .eyebrow{
-  color:var(--gold);
-}
-
-.dark-btn{
-  color:#07111d;
-  border-color:rgba(7,17,29,.35);
-}
-
-.section{
-  padding:100px 6vw;
-  background:var(--dark2);
-}
-
-.section h2{
-  max-width:900px;
-  margin:0 0 24px;
-  font-size:clamp(36px,5vw,72px);
-  line-height:.95;
-  letter-spacing:-.05em;
-  text-transform:uppercase;
-}
-
-.section p{
-  max-width:640px;
-  font-size:20px;
-  color:var(--soft);
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:18px;
-  margin-top:54px;
-}
-
-.card{
-  position:relative;
-  min-height:260px;
-  padding:28px;
-  background:#0d1a29;
-  border:1px solid rgba(255,255,255,.10);
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
-  color:#fff;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  transform:scale(1.01);
-  transition:transform .45s ease;
-  opacity:.92;
-}
-
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,
-      rgba(5,11,18,.08) 0%,
-      rgba(5,11,18,.30) 48%,
-      rgba(5,11,18,.82) 100%
-    );
-}
-
-.card:hover::before{
-  transform:scale(1.04);
-}
-
-.card h3{
-  position:relative;
-  z-index:2;
-  margin:0;
-  color:#fff;
-  font-size:22px;
-  line-height:1.05;
-  letter-spacing:-.02em;
-  text-transform:uppercase;
-}
-
-.oem-card::before{
-  background-image:url("oemtilev2.PNG");
-  background-position:center;
-}
-
-.captain-card::before{
-  background-image:url("2capblueback.PNG");
-  background-position:center;
-}
-
-.quilting-card::before{
-  background-image:url("qtile.PNG");
-  background-position:center;
-}
-
-.upholstery-card::before{
-  background-image:url("uphtile2.PNG");
-  background-position:55% center;
-}
-
-.custom-card::before{
-  background-image:url("cptile.PNG");
-  background-position:center;
-}
-
-.footer{
-  padding:46px 6vw;
-  color:rgba(255,255,255,.55);
-  border-top:1px solid rgba(255,255,255,.1);
-  font-size:14px;
-}
-
-@media(max-width:1100px){
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr);}}
 
 @media(max-width:900px){
-  .hero{
-    align-items:flex-start;
-    background:
-      linear-gradient(180deg,
-        rgba(5,10,18,.74) 0%,
-        rgba(5,10,18,.38) 45%,
-        rgba(5,10,18,.94) 100%
-      ),
-      url("hero-blue-leaning-post.PNG") 76% center / cover no-repeat;
-  }
-
-  .header{
-    padding:28px 24px;
-    background:rgba(5,11,18,.14);
-  }
-
-  .brand img{
-    width:180px;
-  }
-
-  .nav a:not(.quote){
-    display:none;
-  }
-
-  .quote{
-    padding:16px 20px;
-    font-size:11px;
-  }
-
-  .content{
-    padding:210px 24px 80px;
-  }
-
-  .kicker{
-    font-size:13px;
-    letter-spacing:.28em;
-  }
-
-  h1{
-    font-size:clamp(58px,15vw,88px);
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
-  }
-
-  .featured-product{
-    grid-template-columns:1fr;
-    gap:44px;
-    padding:80px 24px;
-  }
-
-  .product-copy h2{
-    font-size:clamp(44px,14vw,76px);
-  }
-
-  .section{
-    padding:80px 24px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .card{
-    min-height:220px;
-  }
-
-  .captain-card,
-  .quilting-card{
-    min-height:250px;
-  }
+  .hero{align-items:flex-start;background:linear-gradient(180deg,rgba(5,10,18,.74) 0%,rgba(5,10,18,.38) 45%,rgba(5,10,18,.94) 100%),url("hero-blue-leaning-post.PNG") 76% center / cover no-repeat;}
+  .header{padding:28px 24px;background:rgba(5,11,18,.14);}
+  .brand img{width:180px;}
+  .nav a:not(.quote){display:none;}
+  .quote{padding:16px 20px;font-size:11px;}
+  .content{padding:210px 24px 80px;}
+  .kicker{font-size:13px;letter-spacing:.28em;}
+  h1{font-size:clamp(58px,15vw,88px);}
+  .btn{width:100%;text-align:center;}
+  .featured-product{grid-template-columns:1fr;gap:44px;padding:80px 24px;}
+  .product-copy h2{font-size:clamp(44px,14vw,76px);}
+  .section{padding:80px 24px;}
+  .grid{grid-template-columns:1fr;}
+  .card{min-height:220px;}
+  .captain-card,.quilting-card{min-height:250px;}
 }
 </style>
 </head>
@@ -393,13 +116,8 @@ p{
 <section class="hero">
   <div class="content">
     <div class="kicker">OEM Marine Upholstery Specialists</div>
-
     <h1>OEM<br>Marine<br>Upholstery</h1>
-
-    <p>
-      Premium upholstery systems engineered for manufacturers and discerning boat owners.
-    </p>
-
+    <p>Premium upholstery systems for manufacturers and discerning boat owners.</p>
     <div class="buttons">
       <a class="btn primary" href="quote.html">Request a Quote</a>
       <a class="btn" href="#products">View Our Work</a>
@@ -411,32 +129,23 @@ p{
   <div class="product-image">
     <img src="Catherine.PNG" alt="Premium marine captain chair">
   </div>
-
   <div class="product-copy">
     <div class="eyebrow">Featured Product</div>
-
     <h2>Poseidon I</h2>
-
-    <p>
-      Premium marine seating designed for OEM production, clean integration, and long-term durability on the water.
-    </p>
-
+    <p>Premium marine seating designed for OEM production, clean integration, and long-term durability on the water.</p>
     <a class="btn dark-btn" href="quote.html">Request a Quote</a>
   </div>
 </section>
 
 <section class="section" id="oem">
-  <h2>Built for manufacturers. Refined for owners.</h2>
-
-  <p>
-    CMJ Marine builds premium marine upholstery systems with the consistency, fit, and finish expected from an OEM manufacturing partner.
-  </p>
+  <h2>Engineered for the water. Crafted for the long haul.</h2>
+  <p>From OEM production to custom upholstery, CMJ Marine builds premium marine seating and interior systems with the fit, finish, and durability expected from a manufacturing partner.</p>
 
   <div class="grid">
+    <a class="card upholstery-card" href="#gallery"><h3>Marine<br>Upholstery</h3></a>
     <a class="card oem-card" href="quote.html"><h3>OEM<br>Production</h3></a>
     <a class="card captain-card" href="quote.html"><h3>Captain<br>Chairs</h3></a>
     <a class="card quilting-card" href="quote.html"><h3>Marine<br>Quilting</h3></a>
-    <a class="card upholstery-card" href="#gallery"><h3>Marine<br>Upholstery</h3></a>
     <a class="card custom-card" href="quote.html"><h3>Custom<br>Projects</h3></a>
   </div>
 </section>
