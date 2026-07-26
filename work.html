@@ -1,120 +1,1431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Work | CMJ Marine</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!--
-CMJ Marine Portfolio
-Image placeholders:
+<title>CMJ Marine Portfolio | Our Work</title>
 
-Hero
-picture1.PNG
-
-Flagship
-picture2.PNG-picture7.PNG
-
-Marine Upholstery
-picture8.PNG-picture23.PNG
-
-Captain Chairs
-picture24.PNG-picture31.PNG
-
-OEM Production
-picture32.PNG-picture41.PNG
-
-Craftsmanship Details
-picture42.PNG-picture48.PNG
--->
+<meta
+  name="description"
+  content="Explore CMJ Marine OEM production, marine upholstery, captain chairs, custom interiors, and craftsmanship details."
+/>
 
 <style>
 :root{
- --dark:#050b12;
- --dark2:#07111d;
- --gold:#d6a84f;
- --white:#fff;
- --soft:#d8e3ee;
+  --dark:#050b12;
+  --dark2:#07111d;
+  --panel:#0c1826;
+  --gold:#d6a84f;
+  --white:#ffffff;
+  --soft:#d8e3ee;
+  --muted:#8fa3b8;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--dark);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%;height:auto}
-.header{position:fixed;top:0;left:0;width:100%;display:grid;grid-template-columns:1fr auto;padding:28px 6vw;background:rgba(5,11,18,.18);backdrop-filter:blur(10px);z-index:10}
-.brand{display:flex;justify-content:center}
-.brand img{width:210px;position:relative;left:-18px}
-.quote{border:1px solid rgba(255,255,255,.45);padding:18px 28px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
-.hero{position:relative;height:80vh}
-.hero img{width:100%;height:100%;object-fit:cover}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,11,18,.15),rgba(5,11,18,.45),rgba(5,11,18,.9))}
-.hero-copy{position:absolute;left:6vw;bottom:8vh;max-width:650px;z-index:2}
-.eyebrow{color:var(--gold);font-size:13px;font-weight:900;letter-spacing:.32em;text-transform:uppercase;margin-bottom:18px}
-h1{font-size:clamp(56px,7vw,96px);line-height:.9;text-transform:uppercase;margin-bottom:24px}
-.intro,.section-title,.gallery{padding-left:6vw;padding-right:6vw}
-.intro{max-width:960px;padding-top:100px;padding-bottom:100px}
-.intro h2,.section-title h2{font-size:clamp(38px,5vw,68px);text-transform:uppercase;margin:18px 0}
-.intro p{color:var(--soft);font-size:21px;line-height:1.7;margin-bottom:18px}
-.gallery{padding-bottom:110px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.full{grid-column:1/-1}
-.grid img{border-radius:8px}
-footer{padding:120px 6vw;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
-@media(max-width:900px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.hero{height:65vh}.hero-copy{left:24px;right:24px}}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:105px;
+}
+
+body{
+  margin:0;
+  background:var(--dark);
+  color:var(--white);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+
+body.lightbox-open{
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+/* HEADER */
+
+.header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:start;
+  padding:38px 6vw 30px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,11,18,.48) 0%,
+      rgba(5,11,18,.12) 100%
+    );
+}
+
+.brand{
+  display:flex;
+  align-items:flex-start;
+}
+
+.brand img{
+  width:220px;
+  height:auto;
+  display:block;
+  filter:brightness(1.15) contrast(1.05);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav a{
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  transition:color .25s ease;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:var(--gold);
+}
+
+.nav .quote{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  width:182px;
+  min-height:146px;
+  padding:30px;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.56);
+  font-size:13px;
+  font-weight:900;
+  line-height:1.45;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  transition:
+    color .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.nav .quote:hover{
+  color:#06111d;
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+/* PORTFOLIO HERO */
+
+.portfolio-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  padding:290px 6vw 105px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,10,18,.14) 0%,
+      rgba(5,10,18,.12) 34%,
+      rgba(5,10,18,.57) 61%,
+      rgba(5,10,18,.97) 100%
+    ),
+    url("picture1.PNG") center center / cover no-repeat;
+}
+
+.portfolio-hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:170px;
+  background:linear-gradient(
+    180deg,
+    rgba(5,11,18,0),
+    var(--dark)
+  );
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1120px;
+}
+
+.eyebrow{
+  margin:0 0 25px;
+  color:var(--gold);
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+}
+
+.hero-content h1{
+  max-width:1060px;
+  margin:0 0 34px;
+  font-size:clamp(64px,8.2vw,126px);
+  line-height:.84;
+  letter-spacing:-.065em;
+  text-transform:uppercase;
+}
+
+.hero-content p{
+  max-width:730px;
+  margin:0;
+  color:var(--soft);
+  font-size:clamp(20px,2vw,25px);
+  line-height:1.5;
+}
+
+/* CATEGORY NAVIGATION */
+
+.category-navigation{
+  position:sticky;
+  top:0;
+  z-index:90;
+  padding:0 6vw;
+  background:rgba(5,11,18,.94);
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+.category-navigation-inner{
+  display:flex;
+  align-items:center;
+  gap:34px;
+  max-width:1500px;
+  margin:auto;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.category-navigation-inner::-webkit-scrollbar{
+  display:none;
+}
+
+.category-navigation a{
+  flex:0 0 auto;
+  padding:23px 0 21px;
+  color:var(--muted);
+  border-bottom:2px solid transparent;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:
+    color .25s ease,
+    border-color .25s ease;
+}
+
+.category-navigation a:hover{
+  color:#fff;
+  border-color:var(--gold);
+}
+
+/* GALLERY SECTIONS */
+
+.gallery-section{
+  padding:120px 6vw;
+  background:var(--dark);
+}
+
+.gallery-section.alt{
+  background:var(--dark2);
+}
+
+.section-heading{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,520px);
+  gap:70px;
+  align-items:end;
+  max-width:1500px;
+  margin:0 auto 56px;
+}
+
+.section-heading h2{
+  max-width:870px;
+  margin:0;
+  font-size:clamp(46px,6vw,88px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+}
+
+.section-heading p{
+  margin:0;
+  color:var(--soft);
+  font-size:19px;
+  line-height:1.6;
+}
+
+/* GALLERY GRID */
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  grid-auto-flow:dense;
+  gap:18px;
+  max-width:1500px;
+  margin:auto;
+}
+
+.gallery-item{
+  position:relative;
+  grid-column:span 4;
+  min-height:380px;
+  padding:0;
+  overflow:hidden;
+  background:var(--panel);
+  border:0;
+  cursor:pointer;
+}
+
+.gallery-item.wide{
+  grid-column:span 8;
+}
+
+.gallery-item.full{
+  grid-column:span 12;
+  min-height:620px;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:
+    transform .7s cubic-bezier(.2,.7,.2,1),
+    filter .4s ease;
+}
+
+.gallery-item::after{
+  content:"View";
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  padding:10px 13px;
+  color:#fff;
+  background:rgba(5,11,18,.67);
+  border:1px solid rgba(255,255,255,.24);
+  opacity:0;
+  transform:translateY(8px);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.gallery-item:hover img{
+  transform:scale(1.025);
+  filter:brightness(1.04);
+}
+
+.gallery-item:hover::after{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* QUOTE CTA */
+
+.gallery-cta{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:60px;
+  align-items:center;
+  margin:20px 6vw 120px;
+  padding:72px;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(214,168,79,.15),
+      transparent 36%
+    ),
+    var(--panel);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.gallery-cta h2{
+  max-width:900px;
+  margin:0 0 20px;
+  font-size:clamp(38px,5vw,72px);
+  line-height:.92;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+}
+
+.gallery-cta p{
+  max-width:680px;
+  margin:0;
+  color:var(--soft);
+  font-size:19px;
+  line-height:1.55;
+}
+
+.btn{
+  display:inline-block;
+  padding:23px 38px;
+  color:#06111d;
+  background:var(--gold);
+  border:1px solid var(--gold);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-align:center;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:
+    color .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.btn:hover{
+  color:#fff;
+  background:transparent;
+  border-color:rgba(255,255,255,.48);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:42px 7vw;
+  background:rgba(2,6,11,.97);
+}
+
+.lightbox.open{
+  display:flex;
+}
+
+.lightbox-image{
+  max-width:100%;
+  max-height:88vh;
+  display:block;
+  object-fit:contain;
+  box-shadow:0 30px 100px rgba(0,0,0,.55);
+}
+
+.lightbox-close,
+.lightbox-previous,
+.lightbox-next{
+  position:absolute;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:52px;
+  height:52px;
+  padding:0;
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.20);
+  cursor:pointer;
+  transition:
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-previous:hover,
+.lightbox-next:hover{
+  background:rgba(214,168,79,.18);
+  border-color:var(--gold);
+}
+
+.lightbox-close{
+  top:28px;
+  right:28px;
+  font-size:27px;
+}
+
+.lightbox-previous,
+.lightbox-next{
+  top:50%;
+  transform:translateY(-50%);
+  font-size:28px;
+}
+
+.lightbox-previous{
+  left:24px;
+}
+
+.lightbox-next{
+  right:24px;
+}
+
+.lightbox-counter{
+  position:absolute;
+  left:50%;
+  bottom:20px;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.68);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  padding:46px 6vw;
+  color:rgba(255,255,255,.55);
+  border-top:1px solid rgba(255,255,255,.10);
+  font-size:14px;
+}
+
+.footer a{
+  transition:color .25s ease;
+}
+
+.footer a:hover{
+  color:#fff;
+}
+
+/* TABLET */
+
+@media(max-width:1100px){
+
+  .gallery-item{
+    grid-column:span 6;
+  }
+
+  .gallery-item.wide{
+    grid-column:span 6;
+  }
+
+  .gallery-item.full{
+    grid-column:span 12;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  html{
+    scroll-padding-top:70px;
+  }
+
+  .header{
+    grid-template-columns:1fr auto;
+    align-items:start;
+    padding:50px 24px 28px;
+  }
+
+  .brand{
+    padding-top:52px;
+  }
+
+  .brand img{
+    width:195px;
+  }
+
+  .nav{
+    gap:0;
+  }
+
+  .nav a:not(.quote){
+    display:none;
+  }
+
+  .nav .quote{
+    width:145px;
+    min-height:180px;
+    padding:35px 28px;
+    font-size:12px;
+    line-height:1.45;
+    letter-spacing:.16em;
+  }
+
+  /*
+    The mobile header occupies roughly 260px.
+
+    The hero content begins well below that header instead of
+    sitting behind the logo and Request Quote banner.
+  */
+
+  .portfolio-hero{
+    min-height:auto;
+    align-items:flex-start;
+    padding:
+      405px
+      24px
+      105px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5,10,18,.11) 0%,
+        rgba(5,10,18,.14) 35%,
+        rgba(5,10,18,.65) 61%,
+        rgba(5,10,18,.98) 100%
+      ),
+      url("picture1.PNG") center top / cover no-repeat;
+  }
+
+  .portfolio-hero::after{
+    height:140px;
+  }
+
+  .hero-content{
+    max-width:100%;
+  }
+
+  .eyebrow{
+    margin-bottom:19px;
+    font-size:12px;
+    letter-spacing:.26em;
+  }
+
+  .hero-content h1{
+    width:100%;
+    max-width:100%;
+    margin-bottom:30px;
+    font-size:clamp(47px,12vw,66px);
+    line-height:.91;
+    letter-spacing:-.055em;
+  }
+
+  .hero-content p{
+    max-width:100%;
+    font-size:19px;
+    line-height:1.5;
+  }
+
+  .category-navigation{
+    padding:0 24px;
+  }
+
+  .category-navigation-inner{
+    gap:26px;
+  }
+
+  .category-navigation a{
+    padding:19px 0 17px;
+  }
+
+  .gallery-section{
+    padding:88px 24px;
+  }
+
+  .section-heading{
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-bottom:38px;
+  }
+
+  .section-heading h2{
+    font-size:clamp(42px,13vw,70px);
+  }
+
+  .section-heading p{
+    font-size:18px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .gallery-item,
+  .gallery-item.wide,
+  .gallery-item.full{
+    grid-column:auto;
+    min-height:0;
+    aspect-ratio:4 / 3;
+  }
+
+  .gallery-item.full{
+    aspect-ratio:16 / 10;
+  }
+
+  .gallery-item::after{
+    display:none;
+  }
+
+  .gallery-cta{
+    grid-template-columns:1fr;
+    gap:36px;
+    margin:0 24px 88px;
+    padding:52px 30px;
+  }
+
+  .gallery-cta h2{
+    font-size:clamp(38px,12vw,62px);
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .lightbox{
+    padding:80px 12px 66px;
+  }
+
+  .lightbox-close{
+    top:18px;
+    right:18px;
+  }
+
+  .lightbox-previous,
+  .lightbox-next{
+    top:auto;
+    bottom:14px;
+    transform:none;
+  }
+
+  .lightbox-previous{
+    left:18px;
+  }
+
+  .lightbox-next{
+    right:18px;
+  }
+
+  .lightbox-counter{
+    bottom:31px;
+  }
+
+  .footer{
+    flex-direction:column;
+    padding:40px 24px;
+  }
+}
+
+@media(max-width:430px){
+
+  .header{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  .brand{
+    padding-top:54px;
+  }
+
+  .brand img{
+    width:185px;
+  }
+
+  .nav .quote{
+    width:140px;
+    min-height:175px;
+    padding:34px 25px;
+  }
+
+  .portfolio-hero{
+    padding-top:395px;
+  }
+
+  .hero-content h1{
+    font-size:clamp(45px,11.8vw,52px);
+  }
+
+  .hero-content p{
+    font-size:18px;
+  }
+}
+
+@media(max-width:370px){
+
+  .brand img{
+    width:165px;
+  }
+
+  .nav .quote{
+    width:128px;
+    min-height:166px;
+    padding:30px 21px;
+    font-size:11px;
+  }
+
+  .portfolio-hero{
+    padding-top:375px;
+  }
+
+  .hero-content h1{
+    font-size:43px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header class="header">
-<a class="brand" href="index.html"><img src="originallogo.PNG" alt="CMJ Marine"></a>
-<a class="quote" href="quote.html">Request Quote</a>
+
+  <a
+    class="brand"
+    href="index.html"
+    aria-label="CMJ Marine home"
+  >
+    <img
+      src="originallogo.PNG"
+      alt="CMJ Marine"
+    >
+  </a>
+
+  <nav
+    class="nav"
+    aria-label="Main navigation"
+  >
+    <a href="index.html#oem">OEM</a>
+    <a href="index.html#products">Products</a>
+    <a class="active" href="work.html">Our Work</a>
+    <a href="index.html#about">About</a>
+
+    <a class="quote" href="quote.html">
+      Request<br>Quote
+    </a>
+  </nav>
+
 </header>
 
-<section class="hero">
-<img src="picture1.PNG" alt="Featured project">
-<div class="hero-copy">
-<div class="eyebrow">Our Work</div>
-<h1>Real Projects.<br>Real Craftsmanship.</h1>
-<p>A curated collection of OEM production, marine upholstery, captain chairs, and custom interiors.</p>
-</div>
-</section>
+<main>
 
-<section class="intro">
-<h2>Built, not staged.</h2>
-<p>Every image on this page represents genuine CMJ Marine craftsmanship. Founded by a marine upholstery craftsman with more than 30 years of experience.</p>
-</section>
+  <!-- HERO: PICTURE 1 -->
 
-<section class="section-title"><div class="eyebrow">Flagship Projects</div><h2>Selected Work</h2></section>
-<section class="gallery"><div class="grid">
-<img class="full" src="picture2.PNG"><img src="picture3.PNG"><img src="picture4.PNG"><img class="full" src="picture5.png"><img src="picture6.PNG"><img src="picture7.PNG">
-</div></section>
+  <section class="portfolio-hero">
 
-<section class="section-title"><div class="eyebrow">Marine Upholstery</div><h2>Designed for Life on the Water</h2></section>
-<section class="gallery"><div class="grid">
-<img class="full" src="picture8.PNG"><img src="picture9.PNG"><img src="picture10.PNG"><img class="full" src="picture11.PNG"><img src="picture12.PNG"><img src="picture13.PNG"><img src="picture14.PNG"><img class="full" src="picture15.PNG"><img src="picture16.PNG"><img src="picture17.PNG"><img class="full" src="picture18.PNG"><img src="picture19.PNG"><img src="picture20.PNG"><img class="full" src="picture21.PNG"><img src="picture22.PNG"><img src="picture23.PNG">
-</div></section>
+    <div class="hero-content">
 
-<section class="section-title"><div class="eyebrow">Captain Chairs</div><h2>Premium Helm Seating</h2></section>
-<section class="gallery"><div class="grid">
-<img class="full" src="picture24.PNG"><img src="picture25.PNG"><img src="picture26.PNG"><img class="full" src="picture27.PNG"><img src="picture28.PNG"><img src="picture29.PNG"><img class="full" src="picture30.PNG"><img src="picture31.PNG">
-</div></section>
+      <div class="eyebrow">
+        CMJ Marine Portfolio
+      </div>
 
-<section class="section-title"><div class="eyebrow">OEM Production</div><h2>Built for Manufacturers</h2></section>
-<section class="gallery"><div class="grid">
-<img class="full" src="picture32.PNG"><img src="picture33.PNG"><img class="full" src="picture34.PNG"><img src="picture35.PNG"><img src="picture36.PNG"><img class="full" src="picture37.PNG"><img src="picture38.PNG"><img src="picture39.PNG"><img class="full" src="picture40.PNG"><img src="picture41.PNG">
-</div></section>
+      <h1>
+        Projects.<br>
+        Real<br>
+        Craftsmanship.
+      </h1>
 
-<section class="section-title"><div class="eyebrow">Craftsmanship Details</div><h2>The Details Matter</h2></section>
-<section class="gallery"><div class="grid">
-<img class="full" src="picture42.PNG"><img src="picture43.PNG"><img src="picture44.PNG"><img class="full" src="picture45.PNG"><img src="picture46.PNG"><img src="picture47.PNG"><img src="picture48.PNG">
-</div></section>
+      <p>
+        A curated collection of OEM production, marine upholstery,
+        captain chairs, and custom interiors.
+      </p>
 
-<footer>
-<h2>Ready to Start Your Project?</h2>
-<p>Whether you're an OEM manufacturer or a boat owner, we'd love to hear about your project.</p>
-<p><a class="quote" href="quote.html">Request Quote</a></p>
-<p style="margin-top:60px;color:#888">CMJ Marine Inc. · OEM Marine Upholstery Specialists</p>
+    </div>
+
+  </section>
+
+  <nav
+    class="category-navigation"
+    aria-label="Portfolio categories"
+  >
+    <div class="category-navigation-inner">
+
+      <a href="#flagship">
+        Flagship
+      </a>
+
+      <a href="#marine-upholstery">
+        Marine Upholstery
+      </a>
+
+      <a href="#captain-chairs">
+        Captain Chairs
+      </a>
+
+      <a href="#oem-production">
+        OEM Production
+      </a>
+
+      <a href="#craftsmanship-details">
+        Details
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- FLAGSHIP: PICTURES 2–7 -->
+
+  <section
+    class="gallery-section"
+    id="flagship"
+  >
+
+    <div class="section-heading">
+
+      <div>
+        <div class="eyebrow">
+          Flagship Projects
+        </div>
+
+        <h2>
+          Built, not staged.
+        </h2>
+      </div>
+
+      <p>
+        Every image represents genuine CMJ Marine craftsmanship.
+        Complete interiors built to feel integrated with the boat,
+        not added to it.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <button class="gallery-item wide" type="button">
+        <img
+          src="picture2.PNG"
+          alt="CMJ Marine flagship upholstery project"
+          loading="eager"
+        >
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img
+          src="picture3.PNG"
+          alt="Premium custom marine interior"
+          loading="lazy"
+        >
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img
+          src="picture4.PNG"
+          alt="Custom marine upholstery installation"
+          loading="lazy"
+        >
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img
+          src="picture5.PNG"
+          alt="Integrated marine seating system"
+          loading="lazy"
+        >
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img
+          src="picture6.PNG"
+          alt="Premium boat upholstery project"
+          loading="lazy"
+        >
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img
+          src="picture7.PNG"
+          alt="Completed CMJ Marine interior"
+          loading="lazy"
+        >
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- MARINE UPHOLSTERY: PICTURES 8–23 -->
+
+  <section
+    class="gallery-section alt"
+    id="marine-upholstery"
+  >
+
+    <div class="section-heading">
+
+      <div>
+        <div class="eyebrow">
+          Complete Interiors
+        </div>
+
+        <h2>
+          Marine Upholstery
+        </h2>
+      </div>
+
+      <p>
+        Purpose-built marine upholstery shaped around the vessel,
+        its function, and the demands of life on the water.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture8.PNG" alt="Custom marine upholstery project" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture9.PNG" alt="Premium marine seating upholstery" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture10.PNG" alt="Custom boat cushion system" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture11.PNG" alt="Finished marine interior" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture12.PNG" alt="Marine upholstery installation" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture13.PNG" alt="Custom upholstered boat seating" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture14.PNG" alt="Premium boat cushion craftsmanship" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture15.PNG" alt="Complete custom boat upholstery" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture16.PNG" alt="Marine seating system" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture17.PNG" alt="Premium marine upholstery project" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture18.PNG" alt="Custom marine upholstery details" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture19.PNG" alt="Completed marine interior upholstery" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture20.PNG" alt="Custom boat interior seating" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture21.PNG" alt="Premium upholstered marine cushion" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture22.PNG" alt="Marine interior upholstery project" loading="lazy">
+      </button>
+
+      <button class="gallery-item full" type="button">
+        <img src="picture23.PNG" alt="Finished CMJ Marine upholstery system" loading="lazy">
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- CAPTAIN CHAIRS: PICTURES 24–31 -->
+
+  <section
+    class="gallery-section"
+    id="captain-chairs"
+  >
+
+    <div class="section-heading">
+
+      <div>
+        <div class="eyebrow">
+          Premium Helm Seating
+        </div>
+
+        <h2>
+          Captain Chairs
+        </h2>
+      </div>
+
+      <p>
+        Refined marine seating developed around support, proportion,
+        clean integration, and long-term durability.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture24.PNG" alt="Premium marine captain chair" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture25.PNG" alt="Custom captain chair upholstery" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture26.PNG" alt="Marine helm chair" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture27.PNG" alt="Pair of custom marine captain chairs" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture28.PNG" alt="Upholstered boat helm seat" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture29.PNG" alt="Premium captain chair detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture30.PNG" alt="Custom marine chair design" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture31.PNG" alt="Completed marine captain seating" loading="lazy">
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- OEM PRODUCTION: PICTURES 32–41 -->
+
+  <section
+    class="gallery-section alt"
+    id="oem-production"
+  >
+
+    <div class="section-heading">
+
+      <div>
+        <div class="eyebrow">
+          Manufacturing Capability
+        </div>
+
+        <h2>
+          OEM Production
+        </h2>
+      </div>
+
+      <p>
+        Repeatable upholstery systems built with the consistency,
+        communication, and production discipline required by boat manufacturers.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture32.PNG" alt="OEM marine upholstery production" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture33.PNG" alt="Marine upholstery manufacturing" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture34.PNG" alt="OEM boat cushion production" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture35.PNG" alt="Repeatable marine upholstery components" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture36.PNG" alt="Marine seating manufacturing process" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture37.PNG" alt="OEM upholstery components" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture38.PNG" alt="Production marine upholstery" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture39.PNG" alt="OEM marine seating system" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture40.PNG" alt="Marine upholstery production detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture41.PNG" alt="Finished OEM upholstery components" loading="lazy">
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- CRAFTSMANSHIP DETAILS: PICTURES 42–48 -->
+
+  <section
+    class="gallery-section"
+    id="craftsmanship-details"
+  >
+
+    <div class="section-heading">
+
+      <div>
+        <div class="eyebrow">
+          The Work Up Close
+        </div>
+
+        <h2>
+          Craftsmanship Details
+        </h2>
+      </div>
+
+      <p>
+        Stitch alignment, fitted transitions, material control,
+        and the quiet decisions that separate premium upholstery
+        from ordinary upholstery.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture42.PNG" alt="Marine upholstery stitching detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture43.PNG" alt="Premium marine quilting detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture44.PNG" alt="Marine upholstery seam detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item wide" type="button">
+        <img src="picture45.PNG" alt="Custom marine upholstery craftsmanship" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture46.PNG" alt="Marine upholstery material detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item" type="button">
+        <img src="picture47.PNG" alt="Precision marine stitching detail" loading="lazy">
+      </button>
+
+      <button class="gallery-item full" type="button">
+        <img src="picture48.PNG" alt="Finished premium marine craftsmanship" loading="lazy">
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="gallery-cta">
+
+    <div>
+
+      <div class="eyebrow">
+        Start a Project
+      </div>
+
+      <h2>
+        Built for your boat. Ready for production.
+      </h2>
+
+      <p>
+        Talk with CMJ Marine about OEM programs, premium seating,
+        complete upholstery systems, or a custom marine project.
+      </p>
+
+    </div>
+
+    <a class="btn" href="quote.html">
+      Request a Quote
+    </a>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+
+  <span>
+    CMJ Marine · OEM Marine Upholstery Specialists · Florida
+  </span>
+
+  <a href="quote.html">
+    Request a Quote
+  </a>
+
 </footer>
+
+<!-- LIGHTBOX -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Expanded portfolio image"
+>
+
+  <button
+    class="lightbox-close"
+    id="lightbox-close"
+    type="button"
+    aria-label="Close image"
+  >
+    ×
+  </button>
+
+  <button
+    class="lightbox-previous"
+    id="lightbox-previous"
+    type="button"
+    aria-label="Previous image"
+  >
+    ‹
+  </button>
+
+  <img
+    class="lightbox-image"
+    id="lightbox-image"
+    src=""
+    alt=""
+  >
+
+  <button
+    class="lightbox-next"
+    id="lightbox-next"
+    type="button"
+    aria-label="Next image"
+  >
+    ›
+  </button>
+
+  <div
+    class="lightbox-counter"
+    id="lightbox-counter"
+  ></div>
+
+</div>
+
+<script>
+const galleryButtons = Array.from(
+  document.querySelectorAll(".gallery-item")
+);
+
+const galleryImages = galleryButtons.map((button) => {
+  const image = button.querySelector("img");
+
+  return {
+    src:image.getAttribute("src"),
+    alt:image.getAttribute("alt")
+  };
+});
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxClose = document.getElementById("lightbox-close");
+const lightboxPrevious = document.getElementById("lightbox-previous");
+const lightboxNext = document.getElementById("lightbox-next");
+const lightboxCounter = document.getElementById("lightbox-counter");
+
+let currentImageIndex = 0;
+
+function showImage(index){
+  currentImageIndex =
+    (index + galleryImages.length) % galleryImages.length;
+
+  const selectedImage = galleryImages[currentImageIndex];
+
+  lightboxImage.src = selectedImage.src;
+  lightboxImage.alt = selectedImage.alt;
+
+  lightboxCounter.textContent =
+    `${currentImageIndex + 1} / ${galleryImages.length}`;
+}
+
+function openLightbox(index){
+  showImage(index);
+  lightbox.classList.add("open");
+  document.body.classList.add("lightbox-open");
+  lightboxClose.focus();
+}
+
+function closeLightbox(){
+  lightbox.classList.remove("open");
+  document.body.classList.remove("lightbox-open");
+  lightboxImage.src = "";
+}
+
+galleryButtons.forEach((button,index) => {
+  button.addEventListener("click",() => {
+    openLightbox(index);
+  });
+});
+
+lightboxClose.addEventListener("click",closeLightbox);
+
+lightboxPrevious.addEventListener("click",() => {
+  showImage(currentImageIndex - 1);
+});
+
+lightboxNext.addEventListener("click",() => {
+  showImage(currentImageIndex + 1);
+});
+
+lightbox.addEventListener("click",(event) => {
+  if(event.target === lightbox){
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown",(event) => {
+  if(!lightbox.classList.contains("open")){
+    return;
+  }
+
+  if(event.key === "Escape"){
+    closeLightbox();
+  }
+
+  if(event.key === "ArrowLeft"){
+    showImage(currentImageIndex - 1);
+  }
+
+  if(event.key === "ArrowRight"){
+    showImage(currentImageIndex + 1);
+  }
+});
+</script>
 
 </body>
 </html>
