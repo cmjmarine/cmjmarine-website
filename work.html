@@ -28,11 +28,12 @@
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:105px;
+  scroll-padding-top:72px;
 }
 
 body{
   margin:0;
+  overflow-x:hidden;
   background:var(--dark);
   color:var(--white);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
@@ -66,8 +67,8 @@ button{
   background:
     linear-gradient(
       180deg,
-      rgba(5,11,18,.48) 0%,
-      rgba(5,11,18,.12) 100%
+      rgba(5,11,18,.42) 0%,
+      rgba(5,11,18,.08) 100%
     );
 }
 
@@ -105,17 +106,18 @@ button{
 
 .nav .quote{
   display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-  width:182px;
-  min-height:146px;
-  padding:30px;
+  align-items:center;
+  justify-content:center;
+  width:164px;
+  min-height:132px;
+  padding:24px;
   color:#fff;
-  border:1px solid rgba(255,255,255,.56);
-  font-size:13px;
+  border:1px solid rgba(255,255,255,.58);
+  font-size:12px;
   font-weight:900;
   line-height:1.45;
   letter-spacing:.17em;
+  text-align:left;
   text-transform:uppercase;
   transition:
     color .25s ease,
@@ -137,14 +139,14 @@ button{
   display:flex;
   align-items:flex-end;
   overflow:hidden;
-  padding:290px 6vw 105px;
+  padding:280px 6vw 105px;
   background:
     linear-gradient(
       180deg,
-      rgba(5,10,18,.14) 0%,
-      rgba(5,10,18,.12) 34%,
-      rgba(5,10,18,.57) 61%,
-      rgba(5,10,18,.97) 100%
+      rgba(5,10,18,.12) 0%,
+      rgba(5,10,18,.10) 32%,
+      rgba(5,10,18,.58) 64%,
+      rgba(5,10,18,.98) 100%
     ),
     url("picture1.PNG") center center / cover no-repeat;
 }
@@ -156,11 +158,12 @@ button{
   right:0;
   bottom:0;
   height:170px;
-  background:linear-gradient(
-    180deg,
-    rgba(5,11,18,0),
-    var(--dark)
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,11,18,0),
+      var(--dark)
+    );
   pointer-events:none;
 }
 
@@ -187,6 +190,10 @@ button{
   line-height:.84;
   letter-spacing:-.065em;
   text-transform:uppercase;
+}
+
+.hero-content h1 span{
+  display:block;
 }
 
 .hero-content p{
@@ -540,21 +547,23 @@ button{
 @media(max-width:900px){
 
   html{
-    scroll-padding-top:70px;
+    scroll-padding-top:66px;
   }
 
   .header{
-    grid-template-columns:1fr auto;
+    grid-template-columns:minmax(0,1fr) auto;
     align-items:start;
-    padding:50px 24px 28px;
+    padding:34px 24px 18px;
   }
 
   .brand{
-    padding-top:52px;
+    min-width:0;
+    padding-top:42px;
   }
 
   .brand img{
-    width:195px;
+    width:184px;
+    max-width:100%;
   }
 
   .nav{
@@ -566,49 +575,41 @@ button{
   }
 
   .nav .quote{
-    width:145px;
-    min-height:180px;
-    padding:35px 28px;
-    font-size:12px;
+    width:136px;
+    min-height:136px;
+    padding:22px;
+    font-size:11px;
     line-height:1.45;
     letter-spacing:.16em;
   }
 
-  /*
-    The mobile header occupies roughly 260px.
-
-    The hero content begins well below that header instead of
-    sitting behind the logo and Request Quote banner.
-  */
-
   .portfolio-hero{
     min-height:auto;
     align-items:flex-start;
-    padding:
-      405px
-      24px
-      105px;
+    padding:340px 24px 100px;
     background:
       linear-gradient(
         180deg,
-        rgba(5,10,18,.11) 0%,
-        rgba(5,10,18,.14) 35%,
-        rgba(5,10,18,.65) 61%,
-        rgba(5,10,18,.98) 100%
+        rgba(5,10,18,.08) 0%,
+        rgba(5,10,18,.11) 34%,
+        rgba(5,10,18,.62) 64%,
+        rgba(5,10,18,.99) 100%
       ),
       url("picture1.PNG") center top / cover no-repeat;
   }
 
   .portfolio-hero::after{
-    height:140px;
+    height:135px;
   }
 
   .hero-content{
+    width:100%;
     max-width:100%;
+    min-width:0;
   }
 
   .eyebrow{
-    margin-bottom:19px;
+    margin-bottom:20px;
     font-size:12px;
     letter-spacing:.26em;
   }
@@ -616,16 +617,25 @@ button{
   .hero-content h1{
     width:100%;
     max-width:100%;
-    margin-bottom:30px;
-    font-size:clamp(47px,12vw,66px);
-    line-height:.91;
-    letter-spacing:-.055em;
+    margin:0 0 30px;
+    font-size:clamp(40px,10.6vw,48px);
+    line-height:.92;
+    letter-spacing:-.06em;
+    white-space:normal;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+
+  .hero-content h1 span{
+    display:block;
+    white-space:nowrap;
   }
 
   .hero-content p{
     max-width:100%;
+    margin:0;
     font-size:19px;
-    line-height:1.5;
+    line-height:1.55;
   }
 
   .category-navigation{
@@ -731,30 +741,29 @@ button{
 @media(max-width:430px){
 
   .header{
-    padding-left:22px;
-    padding-right:22px;
+    padding:32px 22px 18px;
   }
 
   .brand{
-    padding-top:54px;
+    padding-top:43px;
   }
 
   .brand img{
-    width:185px;
+    width:176px;
   }
 
   .nav .quote{
-    width:140px;
-    min-height:175px;
-    padding:34px 25px;
+    width:130px;
+    min-height:130px;
+    padding:20px;
   }
 
   .portfolio-hero{
-    padding-top:395px;
+    padding:325px 22px 96px;
   }
 
   .hero-content h1{
-    font-size:clamp(45px,11.8vw,52px);
+    font-size:clamp(39px,10.5vw,45px);
   }
 
   .hero-content p{
@@ -762,25 +771,30 @@ button{
   }
 }
 
-@media(max-width:370px){
+@media(max-width:380px){
+
+  .header{
+    padding-left:18px;
+    padding-right:18px;
+  }
 
   .brand img{
-    width:165px;
+    width:158px;
   }
 
   .nav .quote{
-    width:128px;
-    min-height:166px;
-    padding:30px 21px;
-    font-size:11px;
+    width:120px;
+    min-height:120px;
+    padding:18px;
+    font-size:10px;
   }
 
   .portfolio-hero{
-    padding-top:375px;
+    padding:305px 18px 92px;
   }
 
   .hero-content h1{
-    font-size:43px;
+    font-size:38px;
   }
 }
 </style>
@@ -830,9 +844,9 @@ button{
       </div>
 
       <h1>
-        Projects.<br>
-        Real<br>
-        Craftsmanship.
+        <span>Projects.</span>
+        <span>Real</span>
+        <span>Craftsmanship.</span>
       </h1>
 
       <p>
