@@ -74,7 +74,7 @@ button{
 
 .brand{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
 }
 
 .brand img{
@@ -108,9 +108,9 @@ button{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:164px;
-  min-height:132px;
-  padding:24px;
+  width:154px;
+  min-height:124px;
+  padding:22px;
   color:#fff;
   border:1px solid rgba(255,255,255,.58);
   font-size:12px;
@@ -553,17 +553,19 @@ button{
   .header{
     grid-template-columns:minmax(0,1fr) auto;
     align-items:start;
-    padding:34px 24px 18px;
+    padding:26px 22px 18px;
   }
 
   .brand{
     min-width:0;
-    padding-top:42px;
+    padding-top:0;
   }
 
   .brand img{
-    width:184px;
+    width:178px;
     max-width:100%;
+    position:relative;
+    top:12px;
   }
 
   .nav{
@@ -575,10 +577,10 @@ button{
   }
 
   .nav .quote{
-    width:136px;
-    min-height:136px;
-    padding:22px;
-    font-size:11px;
+    width:124px;
+    min-height:124px;
+    padding:19px;
+    font-size:10px;
     line-height:1.45;
     letter-spacing:.16em;
   }
@@ -586,7 +588,7 @@ button{
   .portfolio-hero{
     min-height:auto;
     align-items:flex-start;
-    padding:340px 24px 100px;
+    padding:300px 22px 100px;
     background:
       linear-gradient(
         180deg,
@@ -741,25 +743,22 @@ button{
 @media(max-width:430px){
 
   .header{
-    padding:32px 22px 18px;
-  }
-
-  .brand{
-    padding-top:43px;
+    padding:24px 20px 16px;
   }
 
   .brand img{
-    width:176px;
+    width:172px;
+    top:11px;
   }
 
   .nav .quote{
-    width:130px;
-    min-height:130px;
-    padding:20px;
+    width:120px;
+    min-height:120px;
+    padding:18px;
   }
 
   .portfolio-hero{
-    padding:325px 22px 96px;
+    padding:290px 20px 96px;
   }
 
   .hero-content h1{
@@ -774,23 +773,24 @@ button{
 @media(max-width:380px){
 
   .header{
-    padding-left:18px;
-    padding-right:18px;
+    padding-left:17px;
+    padding-right:17px;
   }
 
   .brand img{
-    width:158px;
+    width:154px;
+    top:10px;
   }
 
   .nav .quote{
-    width:120px;
-    min-height:120px;
-    padding:18px;
-    font-size:10px;
+    width:112px;
+    min-height:112px;
+    padding:16px;
+    font-size:9px;
   }
 
   .portfolio-hero{
-    padding:305px 18px 92px;
+    padding:275px 18px 92px;
   }
 
   .hero-content h1{
@@ -844,7 +844,7 @@ button{
       </div>
 
       <h1>
-        <span>Style</span>
+        <span>Quality</span>
         <span>Meets</span>
         <span>Craftsmanship.</span>
       </h1>
@@ -907,10 +907,8 @@ button{
       </div>
 
       <p>
-        <p>
-  Complete marine interiors developed as unified systems, with every surface,
-  seam, and transition considered as part of the boat.
-</p>
+        Complete marine interiors developed as unified systems, with every
+        surface, seam, and transition considered as part of the boat.
       </p>
 
     </div>
