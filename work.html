@@ -1351,6 +1351,65 @@ button{
 </div>
 
 <script>
+const IMAGE_VERSION = "20260727";
+
+function addImageVersion(url){
+  if(!url || url.startsWith("data:")){
+    return url;
+  }
+
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}v=${IMAGE_VERSION}`;
+}
+
+document.querySelectorAll("img[src]").forEach((image) => {
+  image.src = addImageVersion(image.getAttribute("src"));
+});
+
+function versionStyleRules(rules){
+  Array.from(rules).forEach((rule) => {
+    if(rule.cssRules){
+      versionStyleRules(rule.cssRules);
+      return;
+    }
+
+    if(!rule.style){
+      return;
+    }
+
+    Array.from(rule.style).forEach((property) => {
+      const value = rule.style.getPropertyValue(property);
+
+      if(!/url\(/i.test(value)){
+        return;
+      }
+
+      const updatedValue = value.replace(
+        /url\((["']?)([^)"']+\.png)\1\)/gi,
+        (match, quote, url) => {
+          return `url(${quote}${addImageVersion(url)}${quote})`;
+        }
+      );
+
+      if(updatedValue !== value){
+        rule.style.setProperty(
+          property,
+          updatedValue,
+          rule.style.getPropertyPriority(property)
+        );
+      }
+    });
+  });
+}
+
+Array.from(document.styleSheets).forEach((styleSheet) => {
+  try{
+    versionStyleRules(styleSheet.cssRules);
+  }catch(error){
+    /* Ignore stylesheets that cannot be accessed. */
+  }
+});
+
 const galleryButtons = Array.from(
   document.querySelectorAll(".gallery-item")
 );
